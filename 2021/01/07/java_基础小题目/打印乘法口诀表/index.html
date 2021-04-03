@@ -9,7 +9,7 @@
     
     <title>
         
-            java数据类型拓展 |
+            打印乘法口诀表 |
         
         TZ Blog
     </title>
@@ -146,7 +146,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">java数据类型拓展</span>
+            <span class="title-hover-animation">打印乘法口诀表</span>
         </div>
 
         
@@ -164,7 +164,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2021-01-03 00:00:00
+        <i class="fas fa-edit"></i>&nbsp;2021-01-07 00:00:00
     </span>
     
         <span class="article-categories article-meta-item">
@@ -194,12 +194,12 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>487 Words</span>
+            <i class="fas fa-file-word"></i>&nbsp;<span>51 Words</span>
         </span>
     
     
         <span class="article-min2read article-meta-item">
-            <i class="fas fa-clock"></i>&nbsp;<span>2 Mins</span>
+            <i class="fas fa-clock"></i>&nbsp;<span>1 Mins</span>
         </span>
     
     
@@ -211,50 +211,7 @@
         
 
         <div class="article-content markdown-body">
-            <h3 id="进制"><a href="#进制" class="headerlink" title="进制"></a>进制</h3><ul>
-<li>二进制 0b</li>
-<li>八进制 0</li>
-<li>十进制</li>
-<li>十六进制 0x 0<del>9 a</del>f</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> i = <span class="number">10</span>; <span class="comment">//十进制 10</span></span><br><span class="line"><span class="keyword">int</span> i2 = <span class="number">010</span>; <span class="comment">//八进制 8 </span></span><br><span class="line"><span class="keyword">int</span> i3 = <span class="number">0x10</span>; <span class="comment">//十六进制 16</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="银行业务如何表示-浮点拓展"><a href="#银行业务如何表示-浮点拓展" class="headerlink" title="银行业务如何表示 浮点拓展"></a>银行业务如何表示 浮点拓展</h4><p><strong>float AND double 有限 离散 舍入误差 大约 接近但不等于</strong></p>
-<p><em>要尽量避免使用浮点数去比较</em></p>
-<p>如果需要请用数学工具类 <strong>BigDecimal</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">float</span> f = <span class="number">0.1f</span>;<span class="comment">// 0.1</span></span><br><span class="line"><span class="keyword">double</span> d = <span class="number">1.0</span>/<span class="number">10</span>; <span class="comment">// 0.1</span></span><br><span class="line">System.out.println(f == d); <span class="comment">// false</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">float</span> d1 = <span class="number">2313131231231321f</span>;</span><br><span class="line"><span class="keyword">float</span> d2 = d1 + <span class="number">1</span>;</span><br><span class="line">System.out.println(d1 == d2); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h4 id="字符拓展-类型强制转换"><a href="#字符拓展-类型强制转换" class="headerlink" title="字符拓展 类型强制转换"></a>字符拓展 类型强制转换</h4><p><strong>所有的字符本质还是数字</strong></p>
-<p><strong>Unicode编码 2字节 0-65536</strong></p>
-<p><em>Excel 最早就是 2的16次方 65536</em></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> c1 = <span class="string">&#x27;a&#x27;</span>;</span><br><span class="line"><span class="keyword">char</span> c2 = <span class="string">&#x27;中&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//强制转换</span></span><br><span class="line">System.out.println((<span class="keyword">int</span>)c1); <span class="comment">// 97</span></span><br><span class="line">System.out.println((<span class="keyword">int</span>)c2); <span class="comment">// 20013</span></span><br></pre></td></tr></table></figure>
-
-<p>上述例子中 <strong>a</strong> 这个字符在Unicode编码中就是 以97这个数字做同位存储的  <strong>中</strong> 是 20013</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> c3 = <span class="string">&#x27;\u0061&#x27;</span>;</span><br><span class="line">System.out.println(c3)<span class="comment">// 输出结果为 a</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="转义字符"><a href="#转义字符" class="headerlink" title="转义字符"></a>转义字符</h3><ul>
-<li>\t 水平制表符</li>
-<li>\n 换行</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">System.out.println(<span class="string">&quot;Hello\nWorld&quot;</span>);</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="内存地址浅学"><a href="#内存地址浅学" class="headerlink" title="内存地址浅学"></a>内存地址浅学</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">String a1 = <span class="keyword">new</span> String(<span class="string">&quot;Hello World&quot;</span>);</span><br><span class="line">String b1 = <span class="keyword">new</span> String(<span class="string">&quot;Hello World&quot;</span>);</span><br><span class="line"></span><br><span class="line">String a2 = <span class="string">&quot;Hello World&quot;</span>;</span><br><span class="line">String b2 = <span class="string">&quot;Hello World&quot;</span>;</span><br><span class="line"></span><br><span class="line">System.out.println(a1 == b1); <span class="comment">// false</span></span><br><span class="line">System.out.println(a2 == b2); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
-
-<p>为什么第一组对比不相等,第二组相等呢?</p>
-<p>第一组我们使用了 new 所以在内存中会指定一个空间存储 字符 </p>
-<p>两个都用了new 所以一样的字符 在内存中 是 存储在两个不同的空间里面 系统把一样的字符分配给了两个不同的存储空间 两个存储空间不同 对比则不相同</p>
-<p>第二组 两个字符串 本质上是 指向了一个内存地址 所以相同</p>
-<h3 id="布尔值扩展"><a href="#布尔值扩展" class="headerlink" title="布尔值扩展"></a>布尔值扩展</h3><p>基础扩展:这两种写法是一样的意思 都是 变量 == true</p>
-<p><strong>Less is More! 最少就是最多的,代码要精简.</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">boolean</span> flag = <span class="keyword">true</span>;</span><br><span class="line"><span class="keyword">if</span>(flag == <span class="keyword">true</span>)&#123;&#125;;</span><br><span class="line"><span class="keyword">if</span>(flag)&#123;&#125;;</span><br></pre></td></tr></table></figure>
-
-
+            <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">a</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">9</span>; i++) &#123;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> a = <span class="number">1</span>; a &lt;= i; a++) &#123;</span><br><span class="line">                System.out.print(a + <span class="string">&quot; * &quot;</span> + i + <span class="string">&quot; = &quot;</span> + (i * a) + <span class="string">&quot;; &quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            System.out.println();<span class="comment">// 换行</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
         </div>
 
         
@@ -265,13 +222,13 @@
                     <div class="article-prev">
                         <a class="prev"
                            rel="prev"
-                           href="/2021/01/04/%E7%94%A8%E5%BE%AA%E7%8E%AF%E8%BE%93%E5%87%BA1-1000%E8%83%BD%E8%A2%AB5%E6%95%B4%E9%99%A4%E7%9A%84%E6%95%B0%EF%BC%8C%E6%AF%8F%E8%A1%8C%E8%BE%93%E5%87%BA3%E4%B8%AA/"
+                           href="/2021/01/08/java_%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/1.%E4%BB%80%E4%B9%88%E6%98%AF%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"
                         >
                             <span class="left arrow-icon flex-center">
                               <i class="fas fa-chevron-left"></i>
                             </span>
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">用循环输出1-1000能被5整除的数，每行输出3个</span>
+                                <span class="post-nav-title-item">1.什么是计算机网络</span>
                                 <span class="post-nav-item">Prev posts</span>
                             </span>
                         </a>
@@ -281,10 +238,10 @@
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2021/01/02/MarkDown%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95/"
+                           href="/2021/01/06/java_%E5%9F%BA%E7%A1%80%E5%B0%8F%E9%A2%98%E7%9B%AE/%E9%98%B6%E4%B9%98/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">MarkDown常用语法</span>
+                                <span class="post-nav-title-item">阶乘</span>
                                 <span class="post-nav-item">Next posts</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -394,7 +351,7 @@
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%9B%E5%88%B6"><span class="nav-number">1.</span> <span class="nav-text">进制</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%93%B6%E8%A1%8C%E4%B8%9A%E5%8A%A1%E5%A6%82%E4%BD%95%E8%A1%A8%E7%A4%BA-%E6%B5%AE%E7%82%B9%E6%8B%93%E5%B1%95"><span class="nav-number">1.1.</span> <span class="nav-text">银行业务如何表示 浮点拓展</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E6%8B%93%E5%B1%95-%E7%B1%BB%E5%9E%8B%E5%BC%BA%E5%88%B6%E8%BD%AC%E6%8D%A2"><span class="nav-number">1.2.</span> <span class="nav-text">字符拓展 类型强制转换</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BD%AC%E4%B9%89%E5%AD%97%E7%AC%A6"><span class="nav-number">2.</span> <span class="nav-text">转义字符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%85%E5%AD%98%E5%9C%B0%E5%9D%80%E6%B5%85%E5%AD%A6"><span class="nav-number">3.</span> <span class="nav-text">内存地址浅学</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%83%E5%B0%94%E5%80%BC%E6%89%A9%E5%B1%95"><span class="nav-number">4.</span> <span class="nav-text">布尔值扩展</span></a></li></ol>
+        
     </div>
 </div>
         </aside>
