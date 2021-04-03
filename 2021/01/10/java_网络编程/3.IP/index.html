@@ -9,7 +9,7 @@
     
     <title>
         
-            5.通信协议 |
+            3.IP |
         
         TZ Blog
     </title>
@@ -146,7 +146,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">5.通信协议</span>
+            <span class="title-hover-animation">3.IP</span>
         </div>
 
         
@@ -164,7 +164,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2021-01-12 00:00:00
+        <i class="fas fa-edit"></i>&nbsp;2021-01-10 00:00:00
     </span>
     
         <span class="article-categories article-meta-item">
@@ -194,7 +194,7 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>235 Words</span>
+            <i class="fas fa-file-word"></i>&nbsp;<span>229 Words</span>
         </span>
     
     
@@ -211,43 +211,51 @@
         
 
         <div class="article-content markdown-body">
-            <blockquote>
-<p>协议: 约定, 就好比我们现在说的普通话.</p>
+            <p><strong>IP地址: InetAddress</strong></p>
+<ul>
+<li>唯一定位一台网络上的计算机</li>
+<li>127.0.0.1 : localhost</li>
+</ul>
+<p><strong>IP地址分类</strong></p>
+<ul>
+<li><p>公网 (互联网)</p>
+<ul>
+<li>ABCD类地址<ul>
+<li>0</li>
+<li>128</li>
+<li>192</li>
+<li>255</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>私网 (局域网)</p>
+<ul>
+<li>192.168.0.1</li>
+</ul>
+</li>
+<li><p>IPV4</p>
+<ul>
+<li>127.0.0.1 , 四个字节组成,    0-255,    42亿;</li>
+<li>IPV4 三十亿在北美, 亚洲只有四亿;</li>
+</ul>
+</li>
+<li><p>IPV6</p>
+<ul>
+<li><p>fe80::b509:2f5f:1fa3:cd0b%22,    128位    八个无符号整数</p>
+</li>
+<li><blockquote>
+<p>2021 : 1ade : 3333 : 0023 : 0000 : 0000 : 1111 : 3333</p>
 </blockquote>
-<p><strong>网络通信协议</strong>: 速率, 传输码率, 代码结构, 传输控制…</p>
-<p><strong>问题</strong>: 非常的复杂?</p>
-<p><strong>大事化小</strong>: 分层!</p>
-<p><strong>TPC/IP协议簇: 实际上是一组协议</strong><br>重点:</p>
-<ul>
-<li>TCP: 用户传输协议</li>
-<li>UDP: 用户数据报协议</li>
+</li>
 </ul>
-<p><strong>出名的协议:</strong></p>
-<ul>
-<li>TCP:</li>
-<li>IP: 网络互联协议</li>
+</li>
+<li><p>域名: 解决记忆IP的问题;</p>
+</li>
 </ul>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://img-blog.csdnimg.cn/20190105164025264.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxOTIzNjIy,size_16,color_FFFFFF,t_70"
-                      alt="image-20210328170117479"
-                ></p>
-<p><strong>TCP于UDP对比</strong><br>TCP: 打电话</p>
-<ul>
-<li>连接, 稳定</li>
-<li>三次握手, 四次挥手<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">最少需要三次, 保证稳定的连接!</span><br><span class="line">A: 你愁啥?</span><br><span class="line">B: 瞅你咋地?</span><br><span class="line">A: 干一场!</span><br><span class="line"></span><br><span class="line">A: 我不说话了!</span><br><span class="line">B: 明白,但是我还有话要说.....</span><br><span class="line">B: 我也说完了.</span><br><span class="line">A: 明白,拜拜了您嘞!</span><br></pre></td></tr></table></figure></li>
-<li>客户端, 服务端</li>
-<li>传输完成, 释放连接, 效率低</li>
-</ul>
-<p>UPD: 发短信</p>
-<ul>
-<li>不连接, 不稳定</li>
-<li>客户端, 服务端: 没有明确的界限</li>
-<li>不管你有没有准备好, 都可以发给你</li>
-<li>导弹</li>
-<li>DDOS: 洪水攻击! (饱和攻击)</li>
-</ul>
+<p><strong>Java InetAddress类</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.net.InetAddress;</span><br><span class="line"><span class="keyword">import</span> java.net.UnknownHostException;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * A</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">A</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="comment">// 查询本机地址</span></span><br><span class="line">            InetAddress InetAddress1 = InetAddress.getByName(<span class="string">&quot;127.0.0.1&quot;</span>);</span><br><span class="line">            System.out.println(InetAddress1);</span><br><span class="line"></span><br><span class="line">            InetAddress InetAddress3 = InetAddress.getByName(<span class="string">&quot;localhost&quot;</span>);</span><br><span class="line">            System.out.println(InetAddress3);</span><br><span class="line"></span><br><span class="line">            InetAddress InetAddress4 = InetAddress.getLocalHost();</span><br><span class="line">            System.out.println(InetAddress4);</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 查询网站ip地址</span></span><br><span class="line">            InetAddress InetAddress2 = InetAddress.getByName(<span class="string">&quot;www.baidu.com&quot;</span>);</span><br><span class="line">            System.out.println(InetAddress2);</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 常用方法</span></span><br><span class="line">            System.out.println(InetAddress2.getAddress());</span><br><span class="line">            System.out.println(InetAddress2.getCanonicalHostName());</span><br><span class="line">            System.out.println(InetAddress2.getHostAddress());</span><br><span class="line">            System.out.println(InetAddress2.getHostName());</span><br><span class="line"></span><br><span class="line">        &#125; <span class="keyword">catch</span> (UnknownHostException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 
         </div>
 
@@ -259,13 +267,13 @@
                     <div class="article-prev">
                         <a class="prev"
                            rel="prev"
-                           href="/2021/01/13/6.TCP%E5%AE%9E%E7%8E%B0%E8%81%8A%E5%A4%A9/"
+                           href="/2021/01/11/java_%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/4.%E7%AB%AF%E5%8F%A3/"
                         >
                             <span class="left arrow-icon flex-center">
                               <i class="fas fa-chevron-left"></i>
                             </span>
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">6.TCP实现聊天</span>
+                                <span class="post-nav-title-item">4.端口</span>
                                 <span class="post-nav-item">Prev posts</span>
                             </span>
                         </a>
@@ -275,10 +283,10 @@
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2021/01/11/4.%E7%AB%AF%E5%8F%A3/"
+                           href="/2021/01/09/java_%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/2.%E7%BD%91%E7%BB%9C%E9%80%9A%E4%BF%A1%E7%9A%84%E8%A6%81%E7%B4%A0/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">4.端口</span>
+                                <span class="post-nav-title-item">2.网络通信的要素</span>
                                 <span class="post-nav-item">Next posts</span>
                             </span>
                             <span class="right arrow-icon flex-center">
