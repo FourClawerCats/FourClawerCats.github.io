@@ -148,20 +148,23 @@
                 
 
                 <h3 class="home-article-title">
-                    <a href="/2021/01/06/java_%E5%9F%BA%E7%A1%80%E5%B0%8F%E9%A2%98%E7%9B%AE/%E9%98%B6%E4%B9%98/">
-                        阶乘
+                    <a href="/2021/01/23/java_%E5%A4%9A%E7%BA%BF%E7%A8%8B/3.%E5%A4%9A%E4%B8%AA%E7%BA%BF%E7%A8%8B%E6%93%8D%E4%BD%9C%E5%90%8C%E4%B8%80%E4%B8%AA%E5%AF%B9%E8%B1%A1/">
+                        3.多个线程操作同一个对象
                     </a>
                 </h3>
 
                 <div class="home-article-content markdown-body">
                     
-                        12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667...
+                        发现问题: 多个线程操作同一个资源的情况下,线程不安全, 数据紊乱.
+例子:
+这个例子运行起来,不同的人会抢到同一张票,产生并发问题.
+123456789101112131415161718192021222324252627public class...
                     
                 </div>
 
                 <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
-        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Wed Jan 06 2021 00:00:00 GMT+0800">2021-01-06</span></span>
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Sat Jan 23 2021 21:10:21 GMT+0800">2021-01-23</span></span>
         
             <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
                 <ul>
@@ -182,7 +185,7 @@
                     
                         <li>
                             
-                            <a href="/tags/%E5%9F%BA%E7%A1%80%E5%B0%8F%E9%A2%98%E7%9B%AE/">基础小题目</a>&nbsp;
+                            <a href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/">多线程</a>&nbsp;
                         </li>
                     
                 </ul>
@@ -190,7 +193,7 @@
         
     </div>
 
-    <a href="/2021/01/06/java_%E5%9F%BA%E7%A1%80%E5%B0%8F%E9%A2%98%E7%9B%AE/%E9%98%B6%E4%B9%98/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+    <a href="/2021/01/23/java_%E5%A4%9A%E7%BA%BF%E7%A8%8B/3.%E5%A4%9A%E4%B8%AA%E7%BA%BF%E7%A8%8B%E6%93%8D%E4%BD%9C%E5%90%8C%E4%B8%80%E4%B8%AA%E5%AF%B9%E8%B1%A1/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
 </div>
 
             </li>
@@ -200,24 +203,25 @@
                 
 
                 <h3 class="home-article-title">
-                    <a href="/2021/01/05/java_%E5%9F%BA%E7%A1%80%E5%B0%8F%E9%A2%98%E7%9B%AE/%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/">
-                        类型转换
+                    <a href="/2021/01/22/java_%E5%A4%9A%E7%BA%BF%E7%A8%8B/2.%E7%BA%BF%E7%A8%8B%E5%88%9B%E5%BB%BA/">
+                        2.线程创建
                     </a>
                 </h3>
 
                 <div class="home-article-content markdown-body">
                     
-                        Java 是强类型语言,所以要进行运算的时候,需要用到类型转换
-运算中,不同类型的数据先转换为同一类型,然后进行运算
-从低到高
-byte-short-char-int-long-float-double
-1234567891011121314publ...
+                        
+Thread class 继承 Thread类 * 线
+Runnable api  实现Runnable接口 * 捕获
+Callable api 实现 Callable接口 * 回收
+
+创建线程方式一继承Thread类    重写run方法    ...
                     
                 </div>
 
                 <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
-        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Tue Jan 05 2021 00:00:00 GMT+0800">2021-01-05</span></span>
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Fri Jan 22 2021 21:00:14 GMT+0800">2021-01-22</span></span>
         
             <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
                 <ul>
@@ -238,7 +242,7 @@ byte-short-char-int-long-float-double
                     
                         <li>
                             
-                            <a href="/tags/%E5%9F%BA%E7%A1%80%E5%B0%8F%E9%A2%98%E7%9B%AE/">基础小题目</a>&nbsp;
+                            <a href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/">多线程</a>&nbsp;
                         </li>
                     
                 </ul>
@@ -246,7 +250,7 @@ byte-short-char-int-long-float-double
         
     </div>
 
-    <a href="/2021/01/05/java_%E5%9F%BA%E7%A1%80%E5%B0%8F%E9%A2%98%E7%9B%AE/%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+    <a href="/2021/01/22/java_%E5%A4%9A%E7%BA%BF%E7%A8%8B/2.%E7%BA%BF%E7%A8%8B%E5%88%9B%E5%BB%BA/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
 </div>
 
             </li>
@@ -256,20 +260,39 @@ byte-short-char-int-long-float-double
                 
 
                 <h3 class="home-article-title">
-                    <a href="/2021/01/04/java_%E5%9F%BA%E7%A1%80%E5%B0%8F%E9%A2%98%E7%9B%AE/%E7%94%A8%E5%BE%AA%E7%8E%AF%E8%BE%93%E5%87%BA1-1000%E8%83%BD%E8%A2%AB5%E6%95%B4%E9%99%A4%E7%9A%84%E6%95%B0%EF%BC%8C%E6%AF%8F%E8%A1%8C%E8%BE%93%E5%87%BA3%E4%B8%AA/">
-                        用循环输出1-1000能被5整除的数，每行输出3个
+                    <a href="/2021/01/21/java_%E5%A4%9A%E7%BA%BF%E7%A8%8B/1.%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%A6%82%E8%BF%B0/">
+                        1.多线程概述
                     </a>
                 </h3>
 
                 <div class="home-article-content markdown-body">
                     
-                        第一种做法1234567891011121314151617// 0       5       10public class a &#123;    public static void main(String[] args) &#123;    ...
+                        目录
+线程简介,什么是多线程
+线程实现
+线程状态
+线程同步
+线程通信问题
+高级主题
+
+线程简介
+任务
+进程
+线程
+多线程
+
+多任务生活中的例子:
+
+边吃饭 边玩手机
+一边开车 一边打电话
+
+现实中有很多这样同时做多件事情的例子,看起来是多个任务都在做...
                     
                 </div>
 
                 <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
-        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Mon Jan 04 2021 00:00:00 GMT+0800">2021-01-04</span></span>
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Thu Jan 21 2021 21:30:33 GMT+0800">2021-01-21</span></span>
         
             <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
                 <ul>
@@ -290,7 +313,7 @@ byte-short-char-int-long-float-double
                     
                         <li>
                             
-                            <a href="/tags/%E5%9F%BA%E7%A1%80%E5%B0%8F%E9%A2%98%E7%9B%AE/">基础小题目</a>&nbsp;
+                            <a href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/">多线程</a>&nbsp;
                         </li>
                     
                 </ul>
@@ -298,7 +321,7 @@ byte-short-char-int-long-float-double
         
     </div>
 
-    <a href="/2021/01/04/java_%E5%9F%BA%E7%A1%80%E5%B0%8F%E9%A2%98%E7%9B%AE/%E7%94%A8%E5%BE%AA%E7%8E%AF%E8%BE%93%E5%87%BA1-1000%E8%83%BD%E8%A2%AB5%E6%95%B4%E9%99%A4%E7%9A%84%E6%95%B0%EF%BC%8C%E6%AF%8F%E8%A1%8C%E8%BE%93%E5%87%BA3%E4%B8%AA/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+    <a href="/2021/01/21/java_%E5%A4%9A%E7%BA%BF%E7%A8%8B/1.%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%A6%82%E8%BF%B0/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
 </div>
 
             </li>
@@ -308,85 +331,22 @@ byte-short-char-int-long-float-double
                 
 
                 <h3 class="home-article-title">
-                    <a href="/2021/01/03/java_%E5%9F%BA%E7%A1%80%E5%B0%8F%E9%A2%98%E7%9B%AE/java%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E6%8B%93%E5%B1%95/">
-                        java数据类型拓展
+                    <a href="/2021/01/20/%E5%B7%A5%E5%85%B7%E7%9F%A5%E8%AF%86/ubuntu%E9%98%B2%E7%81%AB%E5%A2%99UFW/">
+                        ubuntu防火墙UFW
                     </a>
                 </h3>
 
                 <div class="home-article-content markdown-body">
                     
-                        进制
-二进制 0b
-八进制 0
-十进制
-十六进制 0x 09 af
-
-123int i = 10; //十进制 10int i2 = 010; //八进制 8 int i3 = 0x10; //十六进制 16
-
-银行业务如何表示 浮点拓展float ...
+                        启用sudo ufw enablesudo ufw default deny运行以上两条命令后，开启了防火墙，并在系统启动时自动开启。关闭所有外部对本机的访问，但本机访问外部正常。
+关闭sudo ufw disable
+开启/禁用sudo ufw a...
                     
                 </div>
 
                 <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
-        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Sun Jan 03 2021 00:00:00 GMT+0800">2021-01-03</span></span>
-        
-            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/categories/java/">java</a>&nbsp;
-                        </li>
-                    
-                    
-                </ul>
-            </span>
-        
-        
-            <span class="home-article-tag">
-                <i class="fas fa-tags"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/tags/%E5%9F%BA%E7%A1%80%E5%B0%8F%E9%A2%98%E7%9B%AE/">基础小题目</a>&nbsp;
-                        </li>
-                    
-                </ul>
-            </span>
-        
-    </div>
-
-    <a href="/2021/01/03/java_%E5%9F%BA%E7%A1%80%E5%B0%8F%E9%A2%98%E7%9B%AE/java%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E6%8B%93%E5%B1%95/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
-</div>
-
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                <h3 class="home-article-title">
-                    <a href="/2021/01/02/%E5%B7%A5%E5%85%B7%E7%9F%A5%E8%AF%86/MarkDown%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95/">
-                        MarkDown常用语法
-                    </a>
-                </h3>
-
-                <div class="home-article-content markdown-body">
-                    
-                        标题:二级标题三级标题四级标题五级标题六级标题字体Hello,World!  ** or ctrl+b
-Hello,World!  * or ctrl + i
-Hello,World! ***
-Hello,World!  ~~
-引用
-选择java,走...
-                    
-                </div>
-
-                <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Sat Jan 02 2021 00:00:00 GMT+0800">2021-01-02</span></span>
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Wed Jan 20 2021 21:51:20 GMT+0800">2021-01-20</span></span>
         
             <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
                 <ul>
@@ -415,7 +375,7 @@ Hello,World!  ~~
         
     </div>
 
-    <a href="/2021/01/02/%E5%B7%A5%E5%85%B7%E7%9F%A5%E8%AF%86/MarkDown%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+    <a href="/2021/01/20/%E5%B7%A5%E5%85%B7%E7%9F%A5%E8%AF%86/ubuntu%E9%98%B2%E7%81%AB%E5%A2%99UFW/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
 </div>
 
             </li>
@@ -425,35 +385,42 @@ Hello,World!  ~~
                 
 
                 <h3 class="home-article-title">
-                    <a href="/2021/01/01/%E5%B7%A5%E5%85%B7%E7%9F%A5%E8%AF%86/windows%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">
-                        windows常用命令
+                    <a href="/2021/01/19/TCP/IP/1.OSI%E4%B8%83%E5%B1%82%E6%A8%A1%E5%9E%8B/">
+                        OSI七层参考模型
                     </a>
                 </h3>
 
                 <div class="home-article-content markdown-body">
                     
-                        ctrl  +c 复制 
-ctrl  +v 粘贴
-ctrl  +A 全选
-ctrl  +x 剪切
-ctrl  +z 撤销 
-ctrl  +s 保存
-shift + delete 永久删除
-windows + r  cmd
-windows + e 我的...
+                        OSI七层参考模型
+应用层
+表示层
+会话层
+传输控制层
+网络层
+链路层
+物理层
+
+TCP/IP五层TCO/IP就是对OSI的实现
+其中OSI中的表示层, 绘画层, 在TCP/IP对OSI的实现中已经融入到了应用层中
+
+应用层
+传输控制层
+网络层
+链路...
                     
                 </div>
 
                 <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
-        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Fri Jan 01 2021 00:00:00 GMT+0800">2021-01-01</span></span>
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Tue Jan 19 2021 21:51:20 GMT+0800">2021-01-19</span></span>
         
             <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
                 <ul>
                     
                         <li>
                             
-                            <a href="/categories/%E5%B7%A5%E5%85%B7%E7%9F%A5%E8%AF%86/">工具知识</a>&nbsp;
+                            <a href="/categories/TCP-IP/">TCP/IP</a>&nbsp;
                         </li>
                     
                     
@@ -467,7 +434,7 @@ windows + e 我的...
                     
                         <li>
                             
-                            <a href="/tags/%E5%B7%A5%E5%85%B7%E7%9F%A5%E8%AF%86/">工具知识</a>&nbsp;
+                            <a href="/tags/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/">网络协议</a>&nbsp;
                         </li>
                     
                 </ul>
@@ -475,7 +442,7 @@ windows + e 我的...
         
     </div>
 
-    <a href="/2021/01/01/%E5%B7%A5%E5%85%B7%E7%9F%A5%E8%AF%86/windows%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+    <a href="/2021/01/19/TCP/IP/1.OSI%E4%B8%83%E5%B1%82%E6%A8%A1%E5%9E%8B/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
 </div>
 
             </li>
@@ -485,27 +452,33 @@ windows + e 我的...
                 
 
                 <h3 class="home-article-title">
-                    <a href="/2020/01/07/English/word/King%20of%20the%20hill/">
-                        King of the hill season One word
+                    <a href="/2021/01/18/java_%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/11.URL%E4%B8%8B%E8%BD%BD%E7%BD%91%E7%BB%9C%E8%B5%84%E6%BA%90/">
+                        11.URL下载网络资源
                     </a>
                 </h3>
 
                 <div class="home-article-content markdown-body">
                     
-                        Class Onepilot 飞行员 驾驶员damn  该死starter 启动 开始motor 马达starter motor 发动马达 发动机compression 压缩 压紧 压缩机you getting good compression? 你...
+                        
+https://www.bing.com/统一资源定位符：定位资源的，定位互联网的某一个资源DNS域名解析：www.bing.com xxx.xxx.x.x
+
+
+协议://ip地址:端口/项目名/资源
+
+java.url类介绍12345678910...
                     
                 </div>
 
                 <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
-        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Tue Jan 07 2020 00:00:00 GMT+0800">2020-01-07</span></span>
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Mon Jan 18 2021 21:51:20 GMT+0800">2021-01-18</span></span>
         
             <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
                 <ul>
                     
                         <li>
                             
-                            <a href="/categories/Englishi/">Englishi</a>&nbsp;
+                            <a href="/categories/java/">java</a>&nbsp;
                         </li>
                     
                     
@@ -519,7 +492,7 @@ windows + e 我的...
                     
                         <li>
                             
-                            <a href="/tags/king-of-the-hill-Season-One/">king of the hill Season One</a>&nbsp;
+                            <a href="/tags/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/">网络编程</a>&nbsp;
                         </li>
                     
                 </ul>
@@ -527,7 +500,216 @@ windows + e 我的...
         
     </div>
 
-    <a href="/2020/01/07/English/word/King%20of%20the%20hill/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+    <a href="/2021/01/18/java_%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/11.URL%E4%B8%8B%E8%BD%BD%E7%BD%91%E7%BB%9C%E8%B5%84%E6%BA%90/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2021/01/17/java_%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/10.%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%9C%A8%E7%BA%BF%E5%92%A8%E8%AF%A2/">
+                        10.多线程在线咨询
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        发送类12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849import java.io.BufferedReader;imp...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Sun Jan 17 2021 21:20:20 GMT+0800">2021-01-17</span></span>
+        
+            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/java/">java</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fas fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/">网络编程</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/2021/01/17/java_%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/10.%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%9C%A8%E7%BA%BF%E5%92%A8%E8%AF%A2/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2021/01/16/java_%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/9.UDP%E8%81%8A%E5%A4%A9%E5%AE%9E%E7%8E%B0/">
+                        9.UDP聊天实现
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        循环发送消息12345678910111213141516171819202122232425262728import java.io.BufferedReader;import java.net.DatagramPacket;import java...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Sat Jan 16 2021 21:10:44 GMT+0800">2021-01-16</span></span>
+        
+            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/java/">java</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fas fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/">网络编程</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/2021/01/16/java_%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/9.UDP%E8%81%8A%E5%A4%A9%E5%AE%9E%E7%8E%B0/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2021/01/15/java_%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/8.UDP/">
+                        8.UDP
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        发短信：不用连接，需要知道对方地址。
+发送端12345678910111213141516171819202122232425import java.net.DatagramPacket;import java.net.DatagramSocket;...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Fri Jan 15 2021 21:20:30 GMT+0800">2021-01-15</span></span>
+        
+            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/java/">java</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fas fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/">网络编程</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/2021/01/15/java_%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/8.UDP/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2021/01/14/java_%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/7.TCP%E5%AE%9E%E7%8E%B0%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/">
+                        7.TCP实现文件上传
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        服务端12345678910111213141516171819202122232425262728293031323334353637383940414243import java.io.File;import java.io.FileOutput...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Thu Jan 14 2021 21:55:18 GMT+0800">2021-01-14</span></span>
+        
+            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/java/">java</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fas fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/">网络编程</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/2021/01/14/java_%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/7.TCP%E5%AE%9E%E7%8E%B0%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
 </div>
 
             </li>
@@ -542,6 +724,10 @@ windows + e 我的...
         >Prev</a>
     
 
+    
+        <a class="next btn"
+           href="/page/4/"
+        >Next</a>
     
 </div>
 
