@@ -194,7 +194,7 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>172 Words</span>
+            <i class="fas fa-file-word"></i>&nbsp;<span>255 Words</span>
         </span>
     
     
@@ -215,6 +215,14 @@
 
 <p>类型转换问题</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DateTypeDemo</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">int</span> a;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        <span class="comment">//会报错, 类型转换问题</span></span><br><span class="line">        <span class="comment">//当d+1 整体变成int类型,需要将int 类型的值转换为byte, 会有精度丢失问题</span></span><br><span class="line">        <span class="comment">//需要强制转换</span></span><br><span class="line">        <span class="comment">//使用扩展运算符的时候,不报错, 建议尽量使用扩展运算符</span></span><br><span class="line">        <span class="keyword">byte</span> d = <span class="number">10</span>;</span><br><span class="line">        d = d+<span class="number">1</span>; <span class="comment">//报错</span></span><br><span class="line">        d += <span class="number">1</span> <span class="comment">//不报错</span></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>运算符优先级: 赋值&lt;三目&lt;逻辑&lt;关系&lt;算术&lt;单目</p>
+<p>不同进制数的大小计算</p>
+<ul>
+<li>某一进制数的大小由系数项和权的乘积决定</li>
+<li>(123.45)10 = 1 * 10二次方 + 2 * 10一次方 + 3 * 10的零次方 + 4 * 10 的-1次方 + 5 * 10的 -2次方</li>
+</ul>
+
         </div>
 
         
@@ -225,13 +233,13 @@
                     <div class="article-prev">
                         <a class="prev"
                            rel="prev"
-                           href="/2020/01/07/English/word/King%20of%20the%20hill/"
+                           href="/2016/03/05/java_%E5%9F%BA%E7%A1%80/5.%E5%8E%9F%E7%A0%81,%E5%8F%8D%E7%A0%81,%E8%A1%A5%E7%A0%81/"
                         >
                             <span class="left arrow-icon flex-center">
                               <i class="fas fa-chevron-left"></i>
                             </span>
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">King of the hill season One word</span>
+                                <span class="post-nav-title-item">5.原码,反码,补码</span>
                                 <span class="post-nav-item">Prev posts</span>
                             </span>
                         </a>
