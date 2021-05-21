@@ -9,7 +9,7 @@
     
     <title>
         
-            22.总结 |
+            2.反射机制 |
         
         TZ Blog
     </title>
@@ -146,7 +146,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">22.总结</span>
+            <span class="title-hover-animation">2.反射机制</span>
         </div>
 
         
@@ -164,7 +164,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2021-02-08 21:33:00
+        <i class="fas fa-edit"></i>&nbsp;2021-02-10 21:33:00
     </span>
     
         <span class="article-categories article-meta-item">
@@ -184,7 +184,7 @@
             <ul>
                 
                     <li>
-                        <a href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/">多线程</a>&nbsp;
+                        <a href="/tags/%E6%B3%A8%E8%A7%A3%E5%92%8C%E5%8F%8D%E5%B0%84/">注解和反射</a>&nbsp;
                     </li>
                 
             </ul>
@@ -194,12 +194,12 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>161 Words</span>
+            <i class="fas fa-file-word"></i>&nbsp;<span>578 Words</span>
         </span>
     
     
         <span class="article-min2read article-meta-item">
-            <i class="fas fa-clock"></i>&nbsp;<span>1 Mins</span>
+            <i class="fas fa-clock"></i>&nbsp;<span>2 Mins</span>
         </span>
     
     
@@ -211,8 +211,28 @@
         
 
         <div class="article-content markdown-body">
-            <p>回顾总结线程的创建</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.concurrent.Callable;</span><br><span class="line"><span class="keyword">import</span> java.util.concurrent.ExecutionException;</span><br><span class="line"><span class="keyword">import</span> java.util.concurrent.FutureTask;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ZongJie</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">new</span> MyThread1().start();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">new</span> Thread(<span class="keyword">new</span> MyThread2()).start();</span><br><span class="line"></span><br><span class="line">        FutureTask&lt;Integer&gt; futureTask = <span class="keyword">new</span> FutureTask&lt;Integer&gt;(<span class="keyword">new</span> MyThread3());</span><br><span class="line">        <span class="keyword">new</span> Thread(futureTask).start();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            Integer integer =  futureTask.get();</span><br><span class="line">            System.out.println(integer);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (ExecutionException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//1: 继承Thread类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyThread1</span> <span class="keyword">extends</span> <span class="title">Thread</span></span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;Thread&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//2:实现Runnable接口</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyThread2</span> <span class="keyword">implements</span> <span class="title">Runnable</span></span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;Runnable&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//3:实现callable接口</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyThread3</span> <span class="keyword">implements</span> <span class="title">Callable</span>&lt;<span class="title">Integer</span>&gt;</span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Integer <span class="title">call</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;Callable&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">100</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+            <h2 id="静态语言-vs-动态语言"><a href="#静态语言-vs-动态语言" class="headerlink" title="静态语言 vs 动态语言"></a>静态语言 vs 动态语言</h2><h3 id="动态语言"><a href="#动态语言" class="headerlink" title="动态语言"></a>动态语言</h3><ul>
+<li>是一类在运行是可以改变其结构的语言: 例如新的函数, 对象, 甚至代码可以被引进, 已有的函数可以被删除或是其他结构上的变化.通俗点就是在运行时代码可以根据某些条件改变自身结构</li>
+<li>javaScript php pytho</li>
+</ul>
+<h3 id="静态语言"><a href="#静态语言" class="headerlink" title="静态语言"></a>静态语言</h3><ul>
+<li>与动态语言相对应的, 运行时结构不可变的语言就是静态语言. 如Java, C, C++</li>
+</ul>
+<p>##Java Reflection</p>
+<ul>
+<li><p>Reflection 反射 是java被视为动态语言的关键, 反射机制允许程序在执行期间借助Reflection API取得任何类的内部信息, 并能直接操作任意对象的内部属性及方法</p>
+<ul>
+<li>Class c = Class.forName(“java.lang.String”);</li>
+</ul>
+</li>
+<li><p>加载完类之后, 在堆内存的方法区中就产生了一个Class类型的对象 一个类只有一个Class对象</p>
+</li>
+<li><p>这个对象就包含了完整的类的结构信息. 我们可以通过这个对象看到类的结构, 这个对象就像一面镜子, 透过这个镜子看到类的结构, 所以, 我们形象的称之为反射</p>
+</li>
+</ul>
+<p>正常方式: 引入需要的包类名称 —&gt; 通过new实例化—&gt; 取得实例化对象<br>反射方式: 实例化对象—&gt;getClass()方法 —&gt; 取得完整的包类 名称</p>
+<p>例子:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test04</span> <span class="keyword">extends</span> <span class="title">Object</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> ClassNotFoundException </span>&#123;</span><br><span class="line">        Class c1 = Class.forName(<span class="string">&quot;User&quot;</span>);</span><br><span class="line">        System.out.println(c1);</span><br><span class="line">        Class c2 = Class.forName(<span class="string">&quot;User&quot;</span>);</span><br><span class="line">        Class c3 = Class.forName(<span class="string">&quot;User&quot;</span>);</span><br><span class="line">        Class c4 = Class.forName(<span class="string">&quot;User&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//一个类在内存中已有一个class对象</span></span><br><span class="line">        <span class="comment">//一个类被加载后, 类的整个结构都会被封装在class对象中</span></span><br><span class="line">        System.out.println(c1.hashCode());</span><br><span class="line">        System.out.println(c2.hashCode());</span><br><span class="line">        System.out.println(c3.hashCode());</span><br><span class="line">        System.out.println(c4.hashCode());</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">User</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> id;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">User</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">User</span><span class="params">(String name,<span class="keyword">int</span> id,<span class="keyword">int</span> age)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">        <span class="keyword">this</span>.id = id;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setId</span><span class="params">(<span class="keyword">int</span> id)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.id = id;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAge</span><span class="params">(<span class="keyword">int</span> age)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getId</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> id;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getAge</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;User&#123;&quot;</span> +</span><br><span class="line">                <span class="string">&quot;name=&#x27;&quot;</span> + name + <span class="string">&#x27;\&#x27;&#x27;</span> +</span><br><span class="line">                <span class="string">&quot;, id=&quot;</span> + id +</span><br><span class="line">                <span class="string">&quot;, age=&quot;</span> + age +</span><br><span class="line">                <span class="string">&#x27;&#125;&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
         </div>
 
         
@@ -223,13 +243,13 @@
                     <div class="article-prev">
                         <a class="prev"
                            rel="prev"
-                           href="/2021/02/09/java_%E6%B3%A8%E8%A7%A3%E5%92%8C%E5%8F%8D%E5%B0%84/1.%E4%BB%80%E4%B9%88%E6%98%AF%E6%B3%A8%E8%A7%A3/"
+                           href="/2021/02/11/java_%E6%B3%A8%E8%A7%A3%E5%92%8C%E5%8F%8D%E5%B0%84/3.%E5%BE%97%E5%88%B0class%E7%B1%BB%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/"
                         >
                             <span class="left arrow-icon flex-center">
                               <i class="fas fa-chevron-left"></i>
                             </span>
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">1.什么是注解</span>
+                                <span class="post-nav-title-item">3.得到class类的几种方法</span>
                                 <span class="post-nav-item">Prev posts</span>
                             </span>
                         </a>
@@ -239,10 +259,10 @@
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2021/02/07/java_%E5%A4%9A%E7%BA%BF%E7%A8%8B/21.%E7%BA%BF%E7%A8%8B%E6%B1%A0/"
+                           href="/2021/02/09/java_%E6%B3%A8%E8%A7%A3%E5%92%8C%E5%8F%8D%E5%B0%84/1.%E4%BB%80%E4%B9%88%E6%98%AF%E6%B3%A8%E8%A7%A3/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">21.线程池</span>
+                                <span class="post-nav-title-item">1.什么是注解</span>
                                 <span class="post-nav-item">Next posts</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -352,7 +372,7 @@
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9D%99%E6%80%81%E8%AF%AD%E8%A8%80-vs-%E5%8A%A8%E6%80%81%E8%AF%AD%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">静态语言 vs 动态语言</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8A%A8%E6%80%81%E8%AF%AD%E8%A8%80"><span class="nav-number">1.1.</span> <span class="nav-text">动态语言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9D%99%E6%80%81%E8%AF%AD%E8%A8%80"><span class="nav-number">1.2.</span> <span class="nav-text">静态语言</span></a></li></ol></li></ol>
     </div>
 </div>
         </aside>

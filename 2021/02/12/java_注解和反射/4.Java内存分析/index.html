@@ -9,7 +9,7 @@
     
     <title>
         
-            22.总结 |
+            4.Java内存分析 |
         
         TZ Blog
     </title>
@@ -146,7 +146,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">22.总结</span>
+            <span class="title-hover-animation">4.Java内存分析</span>
         </div>
 
         
@@ -164,7 +164,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2021-02-08 21:33:00
+        <i class="fas fa-edit"></i>&nbsp;2021-02-12 21:33:00
     </span>
     
         <span class="article-categories article-meta-item">
@@ -184,7 +184,7 @@
             <ul>
                 
                     <li>
-                        <a href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/">多线程</a>&nbsp;
+                        <a href="/tags/%E6%B3%A8%E8%A7%A3%E5%92%8C%E5%8F%8D%E5%B0%84/">注解和反射</a>&nbsp;
                     </li>
                 
             </ul>
@@ -194,12 +194,12 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>161 Words</span>
+            <i class="fas fa-file-word"></i>&nbsp;<span>892 Words</span>
         </span>
     
     
         <span class="article-min2read article-meta-item">
-            <i class="fas fa-clock"></i>&nbsp;<span>1 Mins</span>
+            <i class="fas fa-clock"></i>&nbsp;<span>3 Mins</span>
         </span>
     
     
@@ -211,8 +211,72 @@
         
 
         <div class="article-content markdown-body">
-            <p>回顾总结线程的创建</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.concurrent.Callable;</span><br><span class="line"><span class="keyword">import</span> java.util.concurrent.ExecutionException;</span><br><span class="line"><span class="keyword">import</span> java.util.concurrent.FutureTask;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ZongJie</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">new</span> MyThread1().start();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">new</span> Thread(<span class="keyword">new</span> MyThread2()).start();</span><br><span class="line"></span><br><span class="line">        FutureTask&lt;Integer&gt; futureTask = <span class="keyword">new</span> FutureTask&lt;Integer&gt;(<span class="keyword">new</span> MyThread3());</span><br><span class="line">        <span class="keyword">new</span> Thread(futureTask).start();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            Integer integer =  futureTask.get();</span><br><span class="line">            System.out.println(integer);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (ExecutionException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//1: 继承Thread类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyThread1</span> <span class="keyword">extends</span> <span class="title">Thread</span></span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;Thread&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//2:实现Runnable接口</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyThread2</span> <span class="keyword">implements</span> <span class="title">Runnable</span></span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;Runnable&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//3:实现callable接口</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyThread3</span> <span class="keyword">implements</span> <span class="title">Callable</span>&lt;<span class="title">Integer</span>&gt;</span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Integer <span class="title">call</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;Callable&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">100</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+            <h2 id="Java内存"><a href="#Java内存" class="headerlink" title="Java内存"></a>Java内存</h2><ul>
+<li>堆<ul>
+<li>存放new的对象和数组</li>
+<li>可以被所有线程共享, 不会存放别的对象引用</li>
+</ul>
+</li>
+<li>栈<ul>
+<li>存放基本变量类型(会包含这个基本类型的具体数值)</li>
+<li>引用对象的变量(会存放这个引用在堆里面的具体地址)</li>
+</ul>
+</li>
+<li>方法区<ul>
+<li>可以被所有线程共享</li>
+<li>包含了所有的class和static变量</li>
+</ul>
+</li>
+</ul>
+<h2 id="类的加载过程"><a href="#类的加载过程" class="headerlink" title="类的加载过程"></a>类的加载过程</h2><p>当程序主动使用某个类时, 如果改类还未被加载到内存中, 则系统会通过如下三个步骤来对该类进行初始化</p>
+<ol>
+<li>类的加载(load)<ul>
+<li>将类的class文件读入内存, 并为之创建一个java.lang.Class对象. 此过程有类加载器完成</li>
+</ul>
+</li>
+<li>类额连接(link)<ul>
+<li>将类的二进制数据 合并到JRE中</li>
+</ul>
+</li>
+<li>类的初始化(initialize)<ul>
+<li>JVM负责对类进行初始化</li>
+</ul>
+</li>
+</ol>
+<h2 id="类的加载与ClassLoader的理解"><a href="#类的加载与ClassLoader的理解" class="headerlink" title="类的加载与ClassLoader的理解"></a>类的加载与ClassLoader的理解</h2><ul>
+<li>加载: 将class文件字节码内容加载到内存中, 并将这些静态数据转换成方法区的运行时数据结构,然后生成一个代表这个类的java.lang.Class对象</li>
+<li>链接: 将Java类的二进制代码合并到JVM的运行状态中的过程<ul>
+<li>验证: 确保加载的类信息符合JCM规范, 没有安全方面的问题</li>
+<li>准备: 正式为类变量 static 分配内存并设置类变量默认初始值的阶段, 这些内存都将在方法区中进行分配.</li>
+<li>解析: 虚拟机常量池内的符号引用 常量名 替换为直接引用 的过程</li>
+</ul>
+</li>
+<li>初始化:<ul>
+<li>执行类构造器<clinit>()方法的过程. 类构造器<clinit>() 方法是由编译期自动手机类中所有类变量的赋值动作和静态代码块中的语句合并产生的.</li>
+<li>初始化一个类的时候, 如果发现其父类还没有进行初始化, 则需要先出发其父类的初始化</li>
+<li>虚拟机会保证一个类的<clinit>()方法在线程环境中被正确加锁和同步</li>
+</ul>
+</li>
+</ul>
+<h2 id="类的主动引用-一定会发生类的初始化"><a href="#类的主动引用-一定会发生类的初始化" class="headerlink" title="类的主动引用 (一定会发生类的初始化)"></a>类的主动引用 (一定会发生类的初始化)</h2><p>类的主动引用 (一定会发生类的初始化)</p>
+<ul>
+<li>当虚拟机启动, 先初始化main方法所在的类</li>
+<li>new一个类的对象</li>
+<li>调用类的静态成员 和 静态方法 (除了final常量)</li>
+<li>使用java.lang.reflect 包的方法对类进行反射调用</li>
+<li>当初始化一个类, 如果其父类没有被初始化, 则先会初始化他的父类</li>
+</ul>
+<p>类的被动引用 (不会发生类的初始化)</p>
+<ul>
+<li>当访问一个静态域, 只有真正声明这个域的类才会被初始化.<ul>
+<li>当通过子类引用父类的静态变量, 不会导致子类初始化</li>
+</ul>
+</li>
+<li>通过数组定义类引用, 不会触发此类的初始化</li>
+<li>引用常量不会触发此类的初始化 (常量在链接阶段就存入调用类的常量池中了)</li>
+</ul>
+<p>例子:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test07</span> </span>&#123;</span><br><span class="line">    <span class="keyword">static</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;main被加载&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> ClassNotFoundException </span>&#123;</span><br><span class="line">        <span class="comment">//1. 主动引用</span></span><br><span class="line">        Son son = <span class="keyword">new</span> Son();</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 反射也会产生主动引用</span></span><br><span class="line">        Class.forName(<span class="string">&quot;Son&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//不会产生类的引用方法</span></span><br><span class="line">        System.out.println(Son.b);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//调用常量 不会产生类的引用方法</span></span><br><span class="line">        System.out.println(Son.M);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Father</span></span>&#123;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">int</span> b = <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">static</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;father被加载&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Son</span> <span class="keyword">extends</span> <span class="title">Father</span></span>&#123;</span><br><span class="line">    <span class="keyword">static</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;son被加载&quot;</span>);</span><br><span class="line">        m = <span class="number">300</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">int</span> m = <span class="number">100</span>;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> M = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
         </div>
 
         
@@ -220,29 +284,14 @@
         
             <div class="article-nav">
                 
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
-                           href="/2021/02/09/java_%E6%B3%A8%E8%A7%A3%E5%92%8C%E5%8F%8D%E5%B0%84/1.%E4%BB%80%E4%B9%88%E6%98%AF%E6%B3%A8%E8%A7%A3/"
-                        >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">1.什么是注解</span>
-                                <span class="post-nav-item">Prev posts</span>
-                            </span>
-                        </a>
-                    </div>
-                
                 
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2021/02/07/java_%E5%A4%9A%E7%BA%BF%E7%A8%8B/21.%E7%BA%BF%E7%A8%8B%E6%B1%A0/"
+                           href="/2021/02/11/java_%E6%B3%A8%E8%A7%A3%E5%92%8C%E5%8F%8D%E5%B0%84/3.%E5%BE%97%E5%88%B0class%E7%B1%BB%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">21.线程池</span>
+                                <span class="post-nav-title-item">3.得到class类的几种方法</span>
                                 <span class="post-nav-item">Next posts</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -352,7 +401,7 @@
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Java%E5%86%85%E5%AD%98"><span class="nav-number">1.</span> <span class="nav-text">Java内存</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B1%BB%E7%9A%84%E5%8A%A0%E8%BD%BD%E8%BF%87%E7%A8%8B"><span class="nav-number">2.</span> <span class="nav-text">类的加载过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B1%BB%E7%9A%84%E5%8A%A0%E8%BD%BD%E4%B8%8EClassLoader%E7%9A%84%E7%90%86%E8%A7%A3"><span class="nav-number">3.</span> <span class="nav-text">类的加载与ClassLoader的理解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B1%BB%E7%9A%84%E4%B8%BB%E5%8A%A8%E5%BC%95%E7%94%A8-%E4%B8%80%E5%AE%9A%E4%BC%9A%E5%8F%91%E7%94%9F%E7%B1%BB%E7%9A%84%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-number">4.</span> <span class="nav-text">类的主动引用 (一定会发生类的初始化)</span></a></li></ol>
     </div>
 </div>
         </aside>
