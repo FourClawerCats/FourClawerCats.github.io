@@ -148,6 +148,358 @@
                 
 
                 <h3 class="home-article-title">
+                    <a href="/2021/01/29/java_%E5%A4%9A%E7%BA%BF%E7%A8%8B/9.%E7%BA%BF%E7%A8%8B%E7%A4%BC%E8%AE%A9/">
+                        9.线程礼让
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        
+礼让线程,让当前正在执行的线程暂停,但不阻塞
+将线程从运行状态转为就绪状态
+让cpu重新调度,礼让不一定成功, 看cup心情
+
+例子:
+123456789101112131415161718public class TestYield &#123;...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Fri Jan 29 2021 21:53:56 GMT+0800">2021-01-29</span></span>
+        
+            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/java/">java</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fas fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/">多线程</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/2021/01/29/java_%E5%A4%9A%E7%BA%BF%E7%A8%8B/9.%E7%BA%BF%E7%A8%8B%E7%A4%BC%E8%AE%A9/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2021/01/29/java_%E5%A4%9A%E7%BA%BF%E7%A8%8B/12.%E7%BA%BF%E7%A8%8B%E7%9A%84%E4%BC%98%E5%85%88%E7%BA%A7/">
+                        12.线程的优先级
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        线程优先级 priority
+
+java提供了一个线程调度器来监控程序中启动后进入就绪状态的所有线程,线程调度器按照优先级决定应该调度哪个线程来执行
+
+线程优先级用数字表示,范围从1-10
+
+Thread.MIN_PRIORITY = 1
+Threa...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Fri Jan 29 2021 21:30:00 GMT+0800">2021-01-29</span></span>
+        
+            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/java/">java</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fas fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/">多线程</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/2021/01/29/java_%E5%A4%9A%E7%BA%BF%E7%A8%8B/12.%E7%BA%BF%E7%A8%8B%E7%9A%84%E4%BC%98%E5%85%88%E7%BA%A7/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2021/01/28/java_%E5%A4%9A%E7%BA%BF%E7%A8%8B/8.%E7%BA%BF%E7%A8%8B%E4%BC%91%E7%9C%A0/">
+                        8.线程休眠
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        
+sleep 指定当前线程阻塞的毫秒数 1000毫秒 = 1秒
+sleep存在异常InterruptedException;
+sleep时间达到后线程进入就绪状态;
+sleep可以模拟网络延时, 倒计时等
+每个对象都有一个锁, sleep不会释放锁;...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Thu Jan 28 2021 21:54:56 GMT+0800">2021-01-28</span></span>
+        
+            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/java/">java</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fas fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/">多线程</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/2021/01/28/java_%E5%A4%9A%E7%BA%BF%E7%A8%8B/8.%E7%BA%BF%E7%A8%8B%E4%BC%91%E7%9C%A0/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2021/01/28/java_%E5%A4%9A%E7%BA%BF%E7%A8%8B/10.%E7%BA%BF%E7%A8%8B%E5%BC%BA%E5%88%B6%E6%89%A7%E8%A1%8C/">
+                        10.线程强制执行
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        例子:插队
+123456789101112131415161718192021222324//测试join方法public class TestJoin implements Runnable&#123;    public static void ...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Thu Jan 28 2021 21:51:00 GMT+0800">2021-01-28</span></span>
+        
+            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/java/">java</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fas fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/">多线程</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/2021/01/28/java_%E5%A4%9A%E7%BA%BF%E7%A8%8B/10.%E7%BA%BF%E7%A8%8B%E5%BC%BA%E5%88%B6%E6%89%A7%E8%A1%8C/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2021/01/28/java_%E5%A4%9A%E7%BA%BF%E7%A8%8B/11.%E8%A7%82%E6%B5%8B%E7%BA%BF%E7%A8%8B%E7%8A%B6%E6%80%81/">
+                        11.观测线程状态
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        Thread.State线程状态, 线程可以处于以下状态之一:
+
+new
+RUNNABLE 在java虚拟机中执行的线程出于此状态
+BLOCKED 被阻塞等待监视器锁定的线程处于此状态
+WAITING 正在等待另一个线程执行特定动作的线程出于此状态
+...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Thu Jan 28 2021 21:51:00 GMT+0800">2021-01-28</span></span>
+        
+            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/java/">java</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fas fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/">多线程</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/2021/01/28/java_%E5%A4%9A%E7%BA%BF%E7%A8%8B/11.%E8%A7%82%E6%B5%8B%E7%BA%BF%E7%A8%8B%E7%8A%B6%E6%80%81/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2021/01/27/java_%E5%A4%9A%E7%BA%BF%E7%A8%8B/7.%E7%BA%BF%E7%A8%8B%E5%81%9C%E6%AD%A2/">
+                        7.线程停止
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        线程状态
+创建状态-&gt;启动线程
+就绪状态-&gt;获取cpu资源
+运行状态
+阻塞状态 || 死亡
+
+创建-&gt;就绪-&gt;运行-&gt;阻塞-&gt;死亡
+线程方法
+
+
+方法
+说明
+
+
+
+setPriority(int newPriori...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Wed Jan 27 2021 21:16:56 GMT+0800">2021-01-27</span></span>
+        
+            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/java/">java</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fas fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/">多线程</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/2021/01/27/java_%E5%A4%9A%E7%BA%BF%E7%A8%8B/7.%E7%BA%BF%E7%A8%8B%E5%81%9C%E6%AD%A2/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
                     <a href="/2021/01/26/java_%E5%A4%9A%E7%BA%BF%E7%A8%8B/6.%E9%9D%99%E6%80%81%E4%BB%A3%E7%90%86/">
                         6.静态代理
                     </a>
@@ -367,365 +719,6 @@
     </div>
 
     <a href="/2021/01/23/java_%E5%A4%9A%E7%BA%BF%E7%A8%8B/3.%E5%A4%9A%E4%B8%AA%E7%BA%BF%E7%A8%8B%E6%93%8D%E4%BD%9C%E5%90%8C%E4%B8%80%E4%B8%AA%E5%AF%B9%E8%B1%A1/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
-</div>
-
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                <h3 class="home-article-title">
-                    <a href="/2021/01/22/java_%E5%A4%9A%E7%BA%BF%E7%A8%8B/2.%E7%BA%BF%E7%A8%8B%E5%88%9B%E5%BB%BA/">
-                        2.线程创建
-                    </a>
-                </h3>
-
-                <div class="home-article-content markdown-body">
-                    
-                        
-Thread class 继承 Thread类 * 线
-Runnable api  实现Runnable接口 * 捕获
-Callable api 实现 Callable接口 * 回收
-
-创建线程方式一继承Thread类    重写run方法    ...
-                    
-                </div>
-
-                <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Fri Jan 22 2021 21:00:14 GMT+0800">2021-01-22</span></span>
-        
-            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/categories/java/">java</a>&nbsp;
-                        </li>
-                    
-                    
-                </ul>
-            </span>
-        
-        
-            <span class="home-article-tag">
-                <i class="fas fa-tags"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/">多线程</a>&nbsp;
-                        </li>
-                    
-                </ul>
-            </span>
-        
-    </div>
-
-    <a href="/2021/01/22/java_%E5%A4%9A%E7%BA%BF%E7%A8%8B/2.%E7%BA%BF%E7%A8%8B%E5%88%9B%E5%BB%BA/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
-</div>
-
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                <h3 class="home-article-title">
-                    <a href="/2021/01/21/java_%E5%A4%9A%E7%BA%BF%E7%A8%8B/1.%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%A6%82%E8%BF%B0/">
-                        1.多线程概述
-                    </a>
-                </h3>
-
-                <div class="home-article-content markdown-body">
-                    
-                        目录
-线程简介,什么是多线程
-线程实现
-线程状态
-线程同步
-线程通信问题
-高级主题
-
-线程简介
-任务
-进程
-线程
-多线程
-
-多任务生活中的例子:
-
-边吃饭 边玩手机
-一边开车 一边打电话
-
-现实中有很多这样同时做多件事情的例子,看起来是多个任务都在做...
-                    
-                </div>
-
-                <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Thu Jan 21 2021 21:30:33 GMT+0800">2021-01-21</span></span>
-        
-            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/categories/java/">java</a>&nbsp;
-                        </li>
-                    
-                    
-                </ul>
-            </span>
-        
-        
-            <span class="home-article-tag">
-                <i class="fas fa-tags"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/">多线程</a>&nbsp;
-                        </li>
-                    
-                </ul>
-            </span>
-        
-    </div>
-
-    <a href="/2021/01/21/java_%E5%A4%9A%E7%BA%BF%E7%A8%8B/1.%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%A6%82%E8%BF%B0/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
-</div>
-
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                <h3 class="home-article-title">
-                    <a href="/2021/01/20/%E5%B7%A5%E5%85%B7%E7%9F%A5%E8%AF%86/ubuntu%E9%98%B2%E7%81%AB%E5%A2%99UFW/">
-                        ubuntu防火墙UFW
-                    </a>
-                </h3>
-
-                <div class="home-article-content markdown-body">
-                    
-                        启用sudo ufw enablesudo ufw default deny运行以上两条命令后，开启了防火墙，并在系统启动时自动开启。关闭所有外部对本机的访问，但本机访问外部正常。
-关闭sudo ufw disable
-开启/禁用sudo ufw a...
-                    
-                </div>
-
-                <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Wed Jan 20 2021 21:51:20 GMT+0800">2021-01-20</span></span>
-        
-            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/categories/%E5%B7%A5%E5%85%B7%E7%9F%A5%E8%AF%86/">工具知识</a>&nbsp;
-                        </li>
-                    
-                    
-                </ul>
-            </span>
-        
-        
-            <span class="home-article-tag">
-                <i class="fas fa-tags"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/tags/%E5%B7%A5%E5%85%B7%E7%9F%A5%E8%AF%86/">工具知识</a>&nbsp;
-                        </li>
-                    
-                </ul>
-            </span>
-        
-    </div>
-
-    <a href="/2021/01/20/%E5%B7%A5%E5%85%B7%E7%9F%A5%E8%AF%86/ubuntu%E9%98%B2%E7%81%AB%E5%A2%99UFW/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
-</div>
-
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                <h3 class="home-article-title">
-                    <a href="/2021/01/19/TCP/IP/1.OSI%E4%B8%83%E5%B1%82%E6%A8%A1%E5%9E%8B/">
-                        OSI七层参考模型
-                    </a>
-                </h3>
-
-                <div class="home-article-content markdown-body">
-                    
-                        OSI七层参考模型
-应用层
-表示层
-会话层
-传输控制层
-网络层
-链路层
-物理层
-
-TCP/IP五层TCO/IP就是对OSI的实现
-其中OSI中的表示层, 绘画层, 在TCP/IP对OSI的实现中已经融入到了应用层中
-
-应用层
-传输控制层
-网络层
-链路...
-                    
-                </div>
-
-                <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Tue Jan 19 2021 21:51:20 GMT+0800">2021-01-19</span></span>
-        
-            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/categories/TCP-IP/">TCP/IP</a>&nbsp;
-                        </li>
-                    
-                    
-                </ul>
-            </span>
-        
-        
-            <span class="home-article-tag">
-                <i class="fas fa-tags"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/tags/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/">网络协议</a>&nbsp;
-                        </li>
-                    
-                </ul>
-            </span>
-        
-    </div>
-
-    <a href="/2021/01/19/TCP/IP/1.OSI%E4%B8%83%E5%B1%82%E6%A8%A1%E5%9E%8B/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
-</div>
-
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                <h3 class="home-article-title">
-                    <a href="/2021/01/18/java_%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/11.URL%E4%B8%8B%E8%BD%BD%E7%BD%91%E7%BB%9C%E8%B5%84%E6%BA%90/">
-                        11.URL下载网络资源
-                    </a>
-                </h3>
-
-                <div class="home-article-content markdown-body">
-                    
-                        
-https://www.bing.com/统一资源定位符：定位资源的，定位互联网的某一个资源DNS域名解析：www.bing.com xxx.xxx.x.x
-
-
-协议://ip地址:端口/项目名/资源
-
-java.url类介绍12345678910...
-                    
-                </div>
-
-                <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Mon Jan 18 2021 21:51:20 GMT+0800">2021-01-18</span></span>
-        
-            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/categories/java/">java</a>&nbsp;
-                        </li>
-                    
-                    
-                </ul>
-            </span>
-        
-        
-            <span class="home-article-tag">
-                <i class="fas fa-tags"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/tags/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/">网络编程</a>&nbsp;
-                        </li>
-                    
-                </ul>
-            </span>
-        
-    </div>
-
-    <a href="/2021/01/18/java_%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/11.URL%E4%B8%8B%E8%BD%BD%E7%BD%91%E7%BB%9C%E8%B5%84%E6%BA%90/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
-</div>
-
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                <h3 class="home-article-title">
-                    <a href="/2021/01/17/java_%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/10.%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%9C%A8%E7%BA%BF%E5%92%A8%E8%AF%A2/">
-                        10.多线程在线咨询
-                    </a>
-                </h3>
-
-                <div class="home-article-content markdown-body">
-                    
-                        发送类12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849import java.io.BufferedReader;imp...
-                    
-                </div>
-
-                <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Sun Jan 17 2021 21:20:20 GMT+0800">2021-01-17</span></span>
-        
-            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/categories/java/">java</a>&nbsp;
-                        </li>
-                    
-                    
-                </ul>
-            </span>
-        
-        
-            <span class="home-article-tag">
-                <i class="fas fa-tags"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/tags/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/">网络编程</a>&nbsp;
-                        </li>
-                    
-                </ul>
-            </span>
-        
-    </div>
-
-    <a href="/2021/01/17/java_%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/10.%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%9C%A8%E7%BA%BF%E5%92%A8%E8%AF%A2/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
 </div>
 
             </li>
