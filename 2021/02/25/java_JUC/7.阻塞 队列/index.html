@@ -9,7 +9,7 @@
     
     <title>
         
-            MarkDown常用语法 |
+            7.阻塞 队列 |
         
         TZ Blog
     </title>
@@ -146,7 +146,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">MarkDown常用语法</span>
+            <span class="title-hover-animation">7.阻塞 队列</span>
         </div>
 
         
@@ -164,7 +164,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2021-01-02 00:00:00
+        <i class="fas fa-edit"></i>&nbsp;2021-02-25 21:33:00
     </span>
     
         <span class="article-categories article-meta-item">
@@ -172,7 +172,7 @@
             <ul>
                 
                     <li>
-                        <a href="/categories/%E5%B7%A5%E5%85%B7%E7%9F%A5%E8%AF%86/">工具知识</a>&nbsp;
+                        <a href="/categories/java/">java</a>&nbsp;
                     </li>
                 
             </ul>
@@ -184,7 +184,7 @@
             <ul>
                 
                     <li>
-                        <a href="/tags/%E5%B7%A5%E5%85%B7%E7%9F%A5%E8%AF%86/">工具知识</a>&nbsp;
+                        <a href="/tags/JUC/">JUC</a>&nbsp;
                     </li>
                 
             </ul>
@@ -194,12 +194,12 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>144 Words</span>
+            <i class="fas fa-file-word"></i>&nbsp;<span>443 Words</span>
         </span>
     
     
         <span class="article-min2read article-meta-item">
-            <i class="fas fa-clock"></i>&nbsp;<span>1 Mins</span>
+            <i class="fas fa-clock"></i>&nbsp;<span>2 Mins</span>
         </span>
     
     
@@ -211,55 +211,33 @@
         
 
         <div class="article-content markdown-body">
-            <h1 id="标题"><a href="#标题" class="headerlink" title="标题:"></a>标题:</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><h4 id="四级标题"><a href="#四级标题" class="headerlink" title="四级标题"></a>四级标题</h4><h5 id="五级标题"><a href="#五级标题" class="headerlink" title="五级标题"></a>五级标题</h5><h6 id="六级标题"><a href="#六级标题" class="headerlink" title="六级标题"></a>六级标题</h6><h1 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h1><p><strong>Hello,World!</strong>  ** or ctrl+b</p>
-<p><em>Hello,World!</em>  * or ctrl + i</p>
-<p><em><strong>Hello,World!</strong></em> ***</p>
-<p><del>Hello,World!</del>  ~~</p>
-<h1 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h1><blockquote>
-<p>选择java,走向人生巅峰! &gt; 是引用</p>
-</blockquote>
-<h1 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h1><p>*** 或者 —- 分割线</p>
-<hr>
-<hr>
-<h1 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h1><p>插入图片: !+[名字]+(路径)</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://blog.tzcode.top/usr/uploads/code.png"
-                      alt="图片"
-                ></p>
-<h1 id="超链接"><a href="#超链接" class="headerlink" title="超链接"></a>超链接</h1><p>引用超链接: ctrl + k</p>
-<p><a class="link"   target="_blank" rel="noopener" href="https://www.bilibili.com/" >哔哩哔哩<i class="fas fa-external-link-alt"></i></a></p>
-<h1 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h1><h4 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表:"></a>有序列表:</h4><ol>
-<li>哈哈哈</li>
-<li>呵呵呵</li>
-</ol>
-<h4 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表:"></a>无序列表:</h4><p>-+空格</p>
+            <h2 id="阻塞"><a href="#阻塞" class="headerlink" title="阻塞"></a>阻塞</h2><p>FIFO: first in first out<br>     ************************<br>写入 000000000000000000000000   获取<br>     ************************</p>
+<p>什么时候会阻塞?<br>写入: 队列满了的情况下,就会阻塞等待<br>读取: 如果队列是空的,就必须阻塞等待生产</p>
+<h2 id="BlockingQueue"><a href="#BlockingQueue" class="headerlink" title="BlockingQueue"></a>BlockingQueue</h2><p>Queue 和 list and set 同级别 都属于Collection 不是什么新东西</p>
 <ul>
-<li>java</li>
-<li>php</li>
-<li>python</li>
+<li>BlockingQueue 阻塞队列</li>
+<li>Deque 双端队列</li>
+<li>AbstractQueue 非阻塞队列</li>
 </ul>
-<h1 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h1><p>通过竖线|分割创建表格</p>
-<table>
-<thead>
-<tr>
-<th>名字</th>
-<th>性别</th>
-<th>生日</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>张三</td>
-<td>男</td>
-<td>1997</td>
-</tr>
-</tbody></table>
-<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><blockquote>
-<p>三个`+语言 = 代码块</p>
-</blockquote>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<p>什么情况下我们会使用阻塞队列:多线程并发处理,线程池!</p>
+<h2 id="使用队列"><a href="#使用队列" class="headerlink" title="使用队列"></a>使用队列</h2><h3 id="四组API"><a href="#四组API" class="headerlink" title="四组API"></a>四组API</h3><ul>
+<li>抛出异常</li>
+<li>不会抛出异常</li>
+<li>阻塞等待</li>
+<li>超时等待</li>
+</ul>
+<p>方式</p>
+<ul>
+<li>添加          add         offer   offer(“d”,2, TimeUnit.SECONDS);    </li>
+<li>移除          remove      poll    arrayBlockingQueue.poll(2,TimeUnit.SECONDS)        </li>
+<li>判断队列首    element     peek</li>
+</ul>
+<h2 id="SynchronousQueue-同步队列"><a href="#SynchronousQueue-同步队列" class="headerlink" title="SynchronousQueue 同步队列"></a>SynchronousQueue 同步队列</h2><p>同步队列没有容量, 进去一个元素, 必须等待取出来之后, 才能再往里面放另一个元素!</p>
+<ul>
+<li>同步队列</li>
+<li>和其他的BlockingQueue 不一样 SynchronousQueue 不存储元素</li>
+<li>put了一个元素, 必须先take取出来, 否则不能put值进去<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> callable;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.concurrent.SynchronousQueue;</span><br><span class="line"><span class="keyword">import</span> java.util.concurrent.TimeUnit;</span><br><span class="line"></span><br><span class="line"><span class="comment">//同步队列</span></span><br><span class="line"><span class="comment">// 和其他的BlockingQueue 不一样 SynchronousQueue 不存储元素</span></span><br><span class="line"><span class="comment">// put了一个元素, 必须先take取出来, 否则不能put值进去</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SynchronousQueueDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//同步队列</span></span><br><span class="line">        SynchronousQueue&lt;String&gt; synchronousQueue = <span class="keyword">new</span> SynchronousQueue&lt;&gt;();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">new</span> Thread(()-&gt;&#123;</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                synchronousQueue.put(<span class="string">&quot;1&quot;</span>);</span><br><span class="line">                System.out.println(Thread.currentThread().getName()+<span class="string">&quot;put 1&quot;</span>);</span><br><span class="line">                synchronousQueue.put(<span class="string">&quot;2&quot;</span>);</span><br><span class="line">                System.out.println(Thread.currentThread().getName()+<span class="string">&quot;put 2&quot;</span>);</span><br><span class="line">                synchronousQueue.put(<span class="string">&quot;3&quot;</span>);</span><br><span class="line">                System.out.println(Thread.currentThread().getName()+<span class="string">&quot;put 3&quot;</span>);</span><br><span class="line">            &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,<span class="string">&quot;T1&quot;</span>).start();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">new</span> Thread(()-&gt;&#123;</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                TimeUnit.SECONDS.sleep(<span class="number">3</span>);</span><br><span class="line">                System.out.println(Thread.currentThread().getName() + <span class="string">&quot;--&quot;</span> + synchronousQueue.take());</span><br><span class="line">                TimeUnit.SECONDS.sleep(<span class="number">3</span>);</span><br><span class="line">                System.out.println(Thread.currentThread().getName() + <span class="string">&quot;--&quot;</span> + synchronousQueue.take());</span><br><span class="line">                TimeUnit.SECONDS.sleep(<span class="number">3</span>);</span><br><span class="line">                System.out.println(Thread.currentThread().getName() + <span class="string">&quot;--&quot;</span> + synchronousQueue.take());</span><br><span class="line">            &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,<span class="string">&quot;T2&quot;</span>).start();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
 
         </div>
 
@@ -271,13 +249,13 @@
                     <div class="article-prev">
                         <a class="prev"
                            rel="prev"
-                           href="/2021/01/03/java_%E5%9F%BA%E7%A1%80%E5%B0%8F%E9%A2%98%E7%9B%AE/java%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E6%8B%93%E5%B1%95/"
+                           href="/2021/02/26/java_JUC/8.%E7%BA%BF%E7%A8%8B%E6%B1%A0/"
                         >
                             <span class="left arrow-icon flex-center">
                               <i class="fas fa-chevron-left"></i>
                             </span>
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">java数据类型拓展</span>
+                                <span class="post-nav-title-item">8.线程池</span>
                                 <span class="post-nav-item">Prev posts</span>
                             </span>
                         </a>
@@ -287,10 +265,10 @@
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2021/01/01/%E5%B7%A5%E5%85%B7%E7%9F%A5%E8%AF%86/%E6%95%B0%E5%AD%97%E8%B4%A7%E5%B8%81%E9%92%B1%E5%8C%85%E7%9F%A5%E8%AF%86/"
+                           href="/2021/02/24/java_JUC/6.ReadWriteLock%20%E8%AF%BB%E5%86%99%E9%94%81/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">比特币钱包生成原理</span>
+                                <span class="post-nav-title-item">6.ReadWriteLock 读写锁</span>
                                 <span class="post-nav-item">Next posts</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -400,7 +378,7 @@
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A0%87%E9%A2%98"><span class="nav-number">1.</span> <span class="nav-text">标题:</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E7%BA%A7%E6%A0%87%E9%A2%98"><span class="nav-number">1.1.</span> <span class="nav-text">二级标题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89%E7%BA%A7%E6%A0%87%E9%A2%98"><span class="nav-number">1.1.1.</span> <span class="nav-text">三级标题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9B%9B%E7%BA%A7%E6%A0%87%E9%A2%98"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">四级标题</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E4%BA%94%E7%BA%A7%E6%A0%87%E9%A2%98"><span class="nav-number">1.1.1.1.1.</span> <span class="nav-text">五级标题</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%85%AD%E7%BA%A7%E6%A0%87%E9%A2%98"><span class="nav-number">1.1.1.1.1.1.</span> <span class="nav-text">六级标题</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AD%97%E4%BD%93"><span class="nav-number">2.</span> <span class="nav-text">字体</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BC%95%E7%94%A8"><span class="nav-number">3.</span> <span class="nav-text">引用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%86%E5%89%B2%E7%BA%BF"><span class="nav-number">4.</span> <span class="nav-text">分割线</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9B%BE%E7%89%87"><span class="nav-number">5.</span> <span class="nav-text">图片</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%B6%85%E9%93%BE%E6%8E%A5"><span class="nav-number">6.</span> <span class="nav-text">超链接</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%97%E8%A1%A8"><span class="nav-number">7.</span> <span class="nav-text">列表</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9C%89%E5%BA%8F%E5%88%97%E8%A1%A8"><span class="nav-number">7.0.0.1.</span> <span class="nav-text">有序列表:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%97%A0%E5%BA%8F%E5%88%97%E8%A1%A8"><span class="nav-number">7.0.0.2.</span> <span class="nav-text">无序列表:</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A1%A8%E6%A0%BC"><span class="nav-number">8.</span> <span class="nav-text">表格</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81"><span class="nav-number">9.</span> <span class="nav-text">代码</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%98%BB%E5%A1%9E"><span class="nav-number">1.</span> <span class="nav-text">阻塞</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BlockingQueue"><span class="nav-number">2.</span> <span class="nav-text">BlockingQueue</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E9%98%9F%E5%88%97"><span class="nav-number">3.</span> <span class="nav-text">使用队列</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%9B%E7%BB%84API"><span class="nav-number">3.1.</span> <span class="nav-text">四组API</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SynchronousQueue-%E5%90%8C%E6%AD%A5%E9%98%9F%E5%88%97"><span class="nav-number">4.</span> <span class="nav-text">SynchronousQueue 同步队列</span></a></li></ol>
     </div>
 </div>
         </aside>
