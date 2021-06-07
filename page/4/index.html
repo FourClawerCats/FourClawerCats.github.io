@@ -148,6 +148,243 @@
                 
 
                 <h3 class="home-article-title">
+                    <a href="/2021/01/31/java_%E5%A4%9A%E7%BA%BF%E7%A8%8B/14.%E7%BA%BF%E7%A8%8B%E5%90%8C%E6%AD%A5/">
+                        14.线程同步
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        线程同步场景: 多个线程操作同一个资源的情况下
+并发: 同一个对象被多个线程同步操作
+例子:
+
+一万个人抢一张票
+老婆和老公同一张卡 在两个地方取钱
+
+线程同步例子:
+
+现实生活中,我们会遇到 同一个资源多个人都想使用的情况,比如食堂排队打饭,每个人...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Sun Jan 31 2021 21:53:00 GMT+0800">2021-01-31</span></span>
+        
+            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/java/">java</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fas fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/">多线程</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/2021/01/31/java_%E5%A4%9A%E7%BA%BF%E7%A8%8B/14.%E7%BA%BF%E7%A8%8B%E5%90%8C%E6%AD%A5/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2021/01/30/java_%E5%A4%9A%E7%BA%BF%E7%A8%8B/13.%E5%AE%88%E6%8A%A4%E7%BA%BF%E7%A8%8B/">
+                        13.守护线程
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        守护线程 daemon
+
+线程分为用户线程和守护线程
+虚拟机必须确保用户线程执行完毕
+虚拟机不用等待守护线程执行完毕
+如,后台记录操作入职,监控内存,垃圾回收等待
+
+123456789101112131415161718192021222324252...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Sat Jan 30 2021 21:22:00 GMT+0800">2021-01-30</span></span>
+        
+            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/java/">java</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fas fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/">多线程</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/2021/01/30/java_%E5%A4%9A%E7%BA%BF%E7%A8%8B/13.%E5%AE%88%E6%8A%A4%E7%BA%BF%E7%A8%8B/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2021/01/29/java_%E5%A4%9A%E7%BA%BF%E7%A8%8B/9.%E7%BA%BF%E7%A8%8B%E7%A4%BC%E8%AE%A9/">
+                        9.线程礼让
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        
+礼让线程,让当前正在执行的线程暂停,但不阻塞
+将线程从运行状态转为就绪状态
+让cpu重新调度,礼让不一定成功, 看cup心情
+
+例子:
+123456789101112131415161718public class TestYield &#123;...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Fri Jan 29 2021 21:53:56 GMT+0800">2021-01-29</span></span>
+        
+            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/java/">java</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fas fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/">多线程</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/2021/01/29/java_%E5%A4%9A%E7%BA%BF%E7%A8%8B/9.%E7%BA%BF%E7%A8%8B%E7%A4%BC%E8%AE%A9/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2021/01/29/java_%E5%A4%9A%E7%BA%BF%E7%A8%8B/12.%E7%BA%BF%E7%A8%8B%E7%9A%84%E4%BC%98%E5%85%88%E7%BA%A7/">
+                        12.线程的优先级
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        线程优先级 priority
+
+java提供了一个线程调度器来监控程序中启动后进入就绪状态的所有线程,线程调度器按照优先级决定应该调度哪个线程来执行
+
+线程优先级用数字表示,范围从1-10
+
+Thread.MIN_PRIORITY = 1
+Threa...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Fri Jan 29 2021 21:30:00 GMT+0800">2021-01-29</span></span>
+        
+            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/java/">java</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fas fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/">多线程</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/2021/01/29/java_%E5%A4%9A%E7%BA%BF%E7%A8%8B/12.%E7%BA%BF%E7%A8%8B%E7%9A%84%E4%BC%98%E5%85%88%E7%BA%A7/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
                     <a href="/2021/01/28/java_%E5%A4%9A%E7%BA%BF%E7%A8%8B/8.%E7%BA%BF%E7%A8%8B%E4%BC%91%E7%9C%A0/">
                         8.线程休眠
                     </a>
@@ -485,251 +722,6 @@ setPriority(int newPriori...
     </div>
 
     <a href="/2021/01/25/java_%E5%A4%9A%E7%BA%BF%E7%A8%8B/5.Lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
-</div>
-
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                <h3 class="home-article-title">
-                    <a href="/2021/01/24/java_%E5%A4%9A%E7%BA%BF%E7%A8%8B/4.%E5%AE%9E%E7%8E%B0Callable%E6%8E%A5%E5%8F%A3/">
-                        4.实现Callable接口
-                    </a>
-                </h3>
-
-                <div class="home-article-content markdown-body">
-                    
-                        
-实现Callable接口, 需要返回值类型
-重写call方法, 需要抛出异常
-创建目标对象
-创建执行服务
-提交执行
-获取结果
-关闭服务
-
-例子:
-123456789101112131415161718192021222324252627282930...
-                    
-                </div>
-
-                <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Sun Jan 24 2021 21:30:52 GMT+0800">2021-01-24</span></span>
-        
-            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/categories/java/">java</a>&nbsp;
-                        </li>
-                    
-                    
-                </ul>
-            </span>
-        
-        
-            <span class="home-article-tag">
-                <i class="fas fa-tags"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/">多线程</a>&nbsp;
-                        </li>
-                    
-                </ul>
-            </span>
-        
-    </div>
-
-    <a href="/2021/01/24/java_%E5%A4%9A%E7%BA%BF%E7%A8%8B/4.%E5%AE%9E%E7%8E%B0Callable%E6%8E%A5%E5%8F%A3/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
-</div>
-
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                <h3 class="home-article-title">
-                    <a href="/2021/01/23/java_%E5%A4%9A%E7%BA%BF%E7%A8%8B/3.%E5%A4%9A%E4%B8%AA%E7%BA%BF%E7%A8%8B%E6%93%8D%E4%BD%9C%E5%90%8C%E4%B8%80%E4%B8%AA%E5%AF%B9%E8%B1%A1/">
-                        3.多个线程操作同一个对象
-                    </a>
-                </h3>
-
-                <div class="home-article-content markdown-body">
-                    
-                        发现问题: 多个线程操作同一个资源的情况下,线程不安全, 数据紊乱.
-例子:
-这个例子运行起来,不同的人会抢到同一张票,产生并发问题.
-123456789101112131415161718192021222324252627public class...
-                    
-                </div>
-
-                <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Sat Jan 23 2021 21:10:21 GMT+0800">2021-01-23</span></span>
-        
-            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/categories/java/">java</a>&nbsp;
-                        </li>
-                    
-                    
-                </ul>
-            </span>
-        
-        
-            <span class="home-article-tag">
-                <i class="fas fa-tags"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/">多线程</a>&nbsp;
-                        </li>
-                    
-                </ul>
-            </span>
-        
-    </div>
-
-    <a href="/2021/01/23/java_%E5%A4%9A%E7%BA%BF%E7%A8%8B/3.%E5%A4%9A%E4%B8%AA%E7%BA%BF%E7%A8%8B%E6%93%8D%E4%BD%9C%E5%90%8C%E4%B8%80%E4%B8%AA%E5%AF%B9%E8%B1%A1/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
-</div>
-
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                <h3 class="home-article-title">
-                    <a href="/2021/01/22/java_%E5%A4%9A%E7%BA%BF%E7%A8%8B/2.%E7%BA%BF%E7%A8%8B%E5%88%9B%E5%BB%BA/">
-                        2.线程创建
-                    </a>
-                </h3>
-
-                <div class="home-article-content markdown-body">
-                    
-                        
-Thread class 继承 Thread类 * 线
-Runnable api  实现Runnable接口 * 捕获
-Callable api 实现 Callable接口 * 回收
-
-创建线程方式一继承Thread类    重写run方法    ...
-                    
-                </div>
-
-                <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Fri Jan 22 2021 21:00:14 GMT+0800">2021-01-22</span></span>
-        
-            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/categories/java/">java</a>&nbsp;
-                        </li>
-                    
-                    
-                </ul>
-            </span>
-        
-        
-            <span class="home-article-tag">
-                <i class="fas fa-tags"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/">多线程</a>&nbsp;
-                        </li>
-                    
-                </ul>
-            </span>
-        
-    </div>
-
-    <a href="/2021/01/22/java_%E5%A4%9A%E7%BA%BF%E7%A8%8B/2.%E7%BA%BF%E7%A8%8B%E5%88%9B%E5%BB%BA/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
-</div>
-
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                <h3 class="home-article-title">
-                    <a href="/2021/01/21/java_%E5%A4%9A%E7%BA%BF%E7%A8%8B/1.%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%A6%82%E8%BF%B0/">
-                        1.多线程概述
-                    </a>
-                </h3>
-
-                <div class="home-article-content markdown-body">
-                    
-                        目录
-线程简介,什么是多线程
-线程实现
-线程状态
-线程同步
-线程通信问题
-高级主题
-
-线程简介
-任务
-进程
-线程
-多线程
-
-多任务生活中的例子:
-
-边吃饭 边玩手机
-一边开车 一边打电话
-
-现实中有很多这样同时做多件事情的例子,看起来是多个任务都在做...
-                    
-                </div>
-
-                <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Thu Jan 21 2021 21:30:33 GMT+0800">2021-01-21</span></span>
-        
-            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/categories/java/">java</a>&nbsp;
-                        </li>
-                    
-                    
-                </ul>
-            </span>
-        
-        
-            <span class="home-article-tag">
-                <i class="fas fa-tags"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/">多线程</a>&nbsp;
-                        </li>
-                    
-                </ul>
-            </span>
-        
-    </div>
-
-    <a href="/2021/01/21/java_%E5%A4%9A%E7%BA%BF%E7%A8%8B/1.%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%A6%82%E8%BF%B0/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
 </div>
 
             </li>
