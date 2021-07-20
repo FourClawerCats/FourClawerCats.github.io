@@ -77,6 +77,14 @@
                             </a>
                         </li>
                     
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                ARCHIVES
+                            </a>
+                        </li>
+                    
                     
                 </ul>
             </div>
@@ -100,6 +108,11 @@
                 <li class="drawer-menu-item flex-center">
                     <a class=""
                        href="/tags">TAGS</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">ARCHIVES</a>
                 </li>
             
         </ul>
@@ -201,14 +214,14 @@ windows + e 我的...
                 
 
                 <h3 class="home-article-title">
-                    <a href="/2020/01/07/English/word/King%20of%20the%20hill/">
-                        King of the hill season One word
+                    <a href="/2020/01/07/Redis/1.String%E7%B1%BB%E5%9E%8B%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/">
+                        1.String类型常用操作
                     </a>
                 </h3>
 
                 <div class="home-article-content markdown-body">
                     
-                        Class Onepilot 飞行员 驾驶员damn  该死starter 启动 开始motor 马达starter motor 发动马达 发动机compression 压缩 压紧 压缩机you getting good compression? 你...
+                        Redis键(key)keys *查看当前库所有key    (匹配：keys *1)exists key判断某个key是否存在type key 查看你的key是什么类型del key       删除指定的key数据unlink key   根据v...
                     
                 </div>
 
@@ -219,7 +232,7 @@ windows + e 我的...
         
     </div>
 
-    <a href="/2020/01/07/English/word/King%20of%20the%20hill/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+    <a href="/2020/01/07/Redis/1.String%E7%B1%BB%E5%9E%8B%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
 </div>
 
             </li>
@@ -229,26 +242,27 @@ windows + e 我的...
                 
 
                 <h3 class="home-article-title">
-                    <a href="/2016/03/08/java_%E5%9F%BA%E7%A1%80/8.Scaner/">
-                        8.Scaner
+                    <a href="/2020/01/07/Redis/11.Redis_%E4%BA%8B%E5%8A%A1_%E9%94%81%E6%9C%BA%E5%88%B6_%E7%A7%92%E6%9D%80/">
+                        11.Redis_事务_锁机制_秒杀
                     </a>
                 </h3>
 
                 <div class="home-article-content markdown-body">
                     
-                        例子:
-12345678910111213import java.util.Scanner;public class ScannerDemo &#123;    public static void main(String[] args) &#123...
+                        Redis的事务定义Redis事务是一个单独的隔离操作：事务中的所有命令都会序列化、按顺序地执行。事务在执行的过程中，不会被其他客户端发送来的命令请求所打断。
+Redis事务的主要作用就是串联多个命令防止别的命令插队。
+和其他大部分的 NoSQL 不...
                     
                 </div>
 
                 <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
-        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Tue Mar 08 2016 21:10:21 GMT+0800">2016-03-08</span></span>
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Tue Jan 07 2020 00:00:00 GMT+0800">2020-01-07</span></span>
         
         
     </div>
 
-    <a href="/2016/03/08/java_%E5%9F%BA%E7%A1%80/8.Scaner/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+    <a href="/2020/01/07/Redis/11.Redis_%E4%BA%8B%E5%8A%A1_%E9%94%81%E6%9C%BA%E5%88%B6_%E7%A7%92%E6%9D%80/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
 </div>
 
             </li>
@@ -258,29 +272,30 @@ windows + e 我的...
                 
 
                 <h3 class="home-article-title">
-                    <a href="/2016/03/07/java_%E5%9F%BA%E7%A1%80/7.%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6%E8%AF%AD%E5%8F%A5/">
-                        7.流程控制语句
+                    <a href="/2020/01/07/Redis/12.Redis_%E4%BA%8B%E5%8A%A1_%E7%A7%92%E6%9D%80%E6%A1%88%E4%BE%8B/">
+                        12.Redis_事务_秒杀案例
                     </a>
                 </h3>
 
                 <div class="home-article-content markdown-body">
                     
-                        单分支if
-多分枝if else
-多分枝结构if else if  else
-嵌套分支结构例子:
-12345678910111213141516public class ScannerDemo &#123;    public static void...
+                        连接超时，通过连接池解决节省每次连接redis服务带来的消耗，把连接好的实例反复利用。
+通过参数管理连接的行为
+代码见项目中
+
+链接池参数
+MaxTotal：控制一个pool可分配多少个jedis实例，通过pool.getResource()来获取；...
                     
                 </div>
 
                 <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
-        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Mon Mar 07 2016 21:10:21 GMT+0800">2016-03-07</span></span>
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Tue Jan 07 2020 00:00:00 GMT+0800">2020-01-07</span></span>
         
         
     </div>
 
-    <a href="/2016/03/07/java_%E5%9F%BA%E7%A1%80/7.%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6%E8%AF%AD%E5%8F%A5/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+    <a href="/2020/01/07/Redis/12.Redis_%E4%BA%8B%E5%8A%A1_%E7%A7%92%E6%9D%80%E6%A1%88%E4%BE%8B/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
 </div>
 
             </li>
@@ -290,33 +305,32 @@ windows + e 我的...
                 
 
                 <h3 class="home-article-title">
-                    <a href="/2016/03/06/java_%E5%9F%BA%E7%A1%80/6.%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E4%B9%8B%E9%97%B4%E7%9A%84%E8%BD%AC%E6%8D%A2/">
-                        6.基本数据类型之间的转换
+                    <a href="/2020/01/07/Redis/10.%E5%8F%91%E5%B8%83%E8%AE%A2%E9%98%85/">
+                        10.发布订阅
                     </a>
                 </h3>
 
                 <div class="home-article-content markdown-body">
                     
-                        
-在赋值运算或算术运算时, 要求数据类型想相同, 否则要进行类型转换
-转换方式
-自动转换
-强制转换
+                        什么是订阅发布?Redis 发布订阅 (pub/sub) 是一种消息通信模式：发送者 (pub) 发送消息，订阅者 (sub) 接收消息。
+Redis 客户端可以订阅任意数量的频道。
+5.2.Redis的发布和订阅
+客户端可以订阅频道如下图
 
 
-除boolean类型外, 所有基本数据类型因为各自的精度不同, 赋值时都要考虑这个问题
-除boolean类型外, 所有的基本数据类型包括: 整型,...
+
+当...
                     
                 </div>
 
                 <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
-        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Sun Mar 06 2016 21:10:21 GMT+0800">2016-03-06</span></span>
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Tue Jan 07 2020 00:00:00 GMT+0800">2020-01-07</span></span>
         
         
     </div>
 
-    <a href="/2016/03/06/java_%E5%9F%BA%E7%A1%80/6.%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E4%B9%8B%E9%97%B4%E7%9A%84%E8%BD%AC%E6%8D%A2/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+    <a href="/2020/01/07/Redis/10.%E5%8F%91%E5%B8%83%E8%AE%A2%E9%98%85/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
 </div>
 
             </li>
@@ -326,27 +340,26 @@ windows + e 我的...
                 
 
                 <h3 class="home-article-title">
-                    <a href="/2016/03/05/java_%E5%9F%BA%E7%A1%80/5.%E5%8E%9F%E7%A0%81,%E5%8F%8D%E7%A0%81,%E8%A1%A5%E7%A0%81/">
-                        5.原码,反码,补码
+                    <a href="/2020/01/07/Redis/13.Redis%E7%9A%84%E8%B6%85%E6%97%B6%E5%91%BD%E4%BB%A4%E5%92%8C%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E7%AD%96%E7%95%A5/">
+                        13.Redis的超时命令和垃圾回收策略
                     </a>
                 </h3>
 
                 <div class="home-article-content markdown-body">
                     
-                        计算机中数值数据的编码表示机器数 和 真值
-实际运算中, 数是有正负的, 计算机中数也有正负, 通过用一个数的最高位表示符号, 如果字长为8位,分别为D7~~D0,那么D7为符号位,0表示正数,1表示负数,D6~D0为数值位例子:
-11010111 ...
+                        正如 Java 虚拟机，它提供了自动 GC（垃圾回收）的功能，来保证 Java 程序使用过且不再使用的 Java 对象及时的从内存中释放掉，从而保证内存空间可用。
+当程序编写不当或考虑欠缺的时候（比如读入大文件），内存就可能存储不下运行所需要的数据，...
                     
                 </div>
 
                 <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
-        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Sat Mar 05 2016 21:10:21 GMT+0800">2016-03-05</span></span>
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Tue Jan 07 2020 00:00:00 GMT+0800">2020-01-07</span></span>
         
         
     </div>
 
-    <a href="/2016/03/05/java_%E5%9F%BA%E7%A1%80/5.%E5%8E%9F%E7%A0%81,%E5%8F%8D%E7%A0%81,%E8%A1%A5%E7%A0%81/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+    <a href="/2020/01/07/Redis/13.Redis%E7%9A%84%E8%B6%85%E6%97%B6%E5%91%BD%E4%BB%A4%E5%92%8C%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E7%AD%96%E7%95%A5/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
 </div>
 
             </li>
@@ -356,25 +369,27 @@ windows + e 我的...
                 
 
                 <h3 class="home-article-title">
-                    <a href="/2016/03/04/java_%E5%9F%BA%E7%A1%80/4.%E5%8D%95%E7%9B%AE%E8%BF%90%E7%AE%97%E7%AC%A6/">
-                        4.单目运算符
+                    <a href="/2020/01/07/Redis/2.List%E7%B1%BB%E5%9E%8B%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/">
+                        2.List类型常用操作
                     </a>
                 </h3>
 
                 <div class="home-article-content markdown-body">
                     
-                        123456789101112131415public class DateTypeDemo&#123;    static int a;    public static void main(String[] args)&#123;        ...
+                        简介单键多值Redis 列表是简单的字符串列表，按照插入顺序排序。你可以添加一个元素到列表的头部（左边）或者尾部（右边）。它的底层实际是个双向链表，对两端的操作性能很高，通过索引下标的操作中间的节点性能会较差。
+
+常用命令lpush/rpush   ...
                     
                 </div>
 
                 <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
-        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Fri Mar 04 2016 21:10:21 GMT+0800">2016-03-04</span></span>
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Tue Jan 07 2020 00:00:00 GMT+0800">2020-01-07</span></span>
         
         
     </div>
 
-    <a href="/2016/03/04/java_%E5%9F%BA%E7%A1%80/4.%E5%8D%95%E7%9B%AE%E8%BF%90%E7%AE%97%E7%AC%A6/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+    <a href="/2020/01/07/Redis/2.List%E7%B1%BB%E5%9E%8B%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
 </div>
 
             </li>
@@ -384,36 +399,26 @@ windows + e 我的...
                 
 
                 <h3 class="home-article-title">
-                    <a href="/2016/03/03/java_%E5%9F%BA%E7%A1%80/3.%E5%B8%B8%E9%87%8F%E5%92%8C%E5%8F%98%E9%87%8F/">
-                        3.常量和变量
+                    <a href="/2020/01/07/Redis/3.Set%E7%B1%BB%E5%9E%8B%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/">
+                        3.Set类型常用操作
                     </a>
                 </h3>
 
                 <div class="home-article-content markdown-body">
                     
-                        常量:在程序运行中,值不会发生改变的量叫做常量变量:在程序运行中, 值会发生改变的量叫做变量
-变量:
-
-先声明 后赋值
-声明 + 赋值
-
-注意:
-
-在类内, 方法外定义的变量叫成员变量 有默认值
-
-在方法内, 定义的变量必须进行初始化操作
-12345...
+                        简介Redis set对外提供的功能与list类似是一个列表的功能，特殊之处在于set是可以自动排重的，当你需要存储一个列表数据，又不希望出现重复数据时，set是一个很好的选择.
+并且set提供了判断某个成员是否在一个set集合内的重要接口，这个也是...
                     
                 </div>
 
                 <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
-        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Thu Mar 03 2016 21:10:21 GMT+0800">2016-03-03</span></span>
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Tue Jan 07 2020 00:00:00 GMT+0800">2020-01-07</span></span>
         
         
     </div>
 
-    <a href="/2016/03/03/java_%E5%9F%BA%E7%A1%80/3.%E5%B8%B8%E9%87%8F%E5%92%8C%E5%8F%98%E9%87%8F/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+    <a href="/2020/01/07/Redis/3.Set%E7%B1%BB%E5%9E%8B%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
 </div>
 
             </li>
@@ -423,35 +428,26 @@ windows + e 我的...
                 
 
                 <h3 class="home-article-title">
-                    <a href="/2016/03/02/java_%E5%9F%BA%E7%A1%80/2.%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">
-                        2.数据类型
+                    <a href="/2020/01/07/Redis/14.Redis%E4%B8%AD%E4%BD%BF%E7%94%A8Lua%E8%AF%AD%E8%A8%80/">
+                        14.Redis中使用Lua语言
                     </a>
                 </h3>
 
                 <div class="home-article-content markdown-body">
                     
-                        基本数据类型java是一种强类型语言
-
-强类型表示, 变量在定义的时候必须显式的声明类型是什么
-弱类型表示, 变量会根据值自己去推断, 不需要指定类型是什么
-常量是有数据类型的
-变量必须声明其数据类型
-
-数据类型
-基本数据类型  四类八种
-数值型
-整...
+                        在 Redis 的 2.6 以上版本中，除了可以使用命令外，还可以使用 Lua 语言操作 Redis。从前面的命令可以看出 Redis 命令的计算能力并不算很强大，而使用 Lua 语言则在很大程度上弥补了 Redis 的这个不足。
+只是在 Redis...
                     
                 </div>
 
                 <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
-        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Wed Mar 02 2016 21:10:21 GMT+0800">2016-03-02</span></span>
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Tue Jan 07 2020 00:00:00 GMT+0800">2020-01-07</span></span>
         
         
     </div>
 
-    <a href="/2016/03/02/java_%E5%9F%BA%E7%A1%80/2.%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+    <a href="/2020/01/07/Redis/14.Redis%E4%B8%AD%E4%BD%BF%E7%94%A8Lua%E8%AF%AD%E8%A8%80/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
 </div>
 
             </li>
