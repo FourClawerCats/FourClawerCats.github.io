@@ -242,6 +242,67 @@ windows + e 我的...
                 
 
                 <h3 class="home-article-title">
+                    <a href="/2016/04/16/Redis/16.Redis%E6%8C%81%E4%B9%85%E5%8C%96%E4%B9%8BAOF/">
+                        16.Redis持久化之AOF
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        AOF（Append Only File）以日志的形式来记录每个写操作（增量保存），将Redis执行过的所有写指令记录下来(读操作不记录)， 只许追加文件但不可以改写文件，redis启动之初会读取该文件重新构建数据，换言之，redis 重启的话就根据...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Sat Apr 16 2016 00:00:00 GMT+0800">2016-04-16</span></span>
+        
+        
+    </div>
+
+    <a href="/2016/04/16/Redis/16.Redis%E6%8C%81%E4%B9%85%E5%8C%96%E4%B9%8BAOF/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2016/04/15/Redis/15.Redis%E6%8C%81%E4%B9%85%E5%8C%96%E4%B9%8BRDB/">
+                        15.Redis持久化方式
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        简介Redis 提供了2个不同形式的持久化方式。
+
+RDB（Redis DataBase）
+AOF（Append Of File）
+
+RDB在指定的时间间隔内将内存中的数据集快照写入磁盘,也就是行话讲的Snapshot快照,它恢复时是将快照文件直接读...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Fri Apr 15 2016 00:00:00 GMT+0800">2016-04-15</span></span>
+        
+        
+    </div>
+
+    <a href="/2016/04/15/Redis/15.Redis%E6%8C%81%E4%B9%85%E5%8C%96%E4%B9%8BRDB/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
                     <a href="/2016/04/14/Redis/14.Redis%E4%B8%AD%E4%BD%BF%E7%94%A8Lua%E8%AF%AD%E8%A8%80/">
                         14.Redis中使用Lua语言
                     </a>
@@ -389,72 +450,6 @@ Redis 客户端可以订阅任意数量的频道。
     </div>
 
     <a href="/2016/04/10/Redis/10.%E5%8F%91%E5%B8%83%E8%AE%A2%E9%98%85/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
-</div>
-
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                <h3 class="home-article-title">
-                    <a href="/2016/04/09/Redis/9.Redis%E9%85%8D%E7%BD%AE/">
-                        9.Redis配置
-                    </a>
-                </h3>
-
-                <div class="home-article-content markdown-body">
-                    
-                        默认名字为: redis.conf
-Units 单位
-配置大小单位,开头定义了一些基本的度量单位，只支持bytes，不支持bit
-大小写不敏感
-
-INCLUDES
-类似jsp中的include，多实例的情况可以把公用的配置文件提取出来
-
-网络相关配置...
-                    
-                </div>
-
-                <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Sat Apr 09 2016 00:00:00 GMT+0800">2016-04-09</span></span>
-        
-        
-    </div>
-
-    <a href="/2016/04/09/Redis/9.Redis%E9%85%8D%E7%BD%AE/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
-</div>
-
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                <h3 class="home-article-title">
-                    <a href="/2016/04/08/Redis/8.Geospatial%E7%B1%BB%E5%9E%8B%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/">
-                        8.Geospatial类型常用操作
-                    </a>
-                </h3>
-
-                <div class="home-article-content markdown-body">
-                    
-                        简介Redis 3.2 中增加了对GEO类型的支持。GEO，Geographic，地理信息的缩写。该类型，就是元素的2维坐标，在地图上就是经纬度。redis基于该类型，提供了经纬度设置，查询，范围查询，距离查询，经纬度Hash等常见操作。
-命令
-ge...
-                    
-                </div>
-
-                <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Fri Apr 08 2016 00:00:00 GMT+0800">2016-04-08</span></span>
-        
-        
-    </div>
-
-    <a href="/2016/04/08/Redis/8.Geospatial%E7%B1%BB%E5%9E%8B%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
 </div>
 
             </li>
