@@ -138,6 +138,133 @@
                 
 
                 <h3 class="home-article-title">
+                    <a href="/2016/04/13/Redis/13.Redis%E7%9A%84%E8%B6%85%E6%97%B6%E5%91%BD%E4%BB%A4%E5%92%8C%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E7%AD%96%E7%95%A5/">
+                        13.Redis的超时命令和垃圾回收策略
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        正如 Java 虚拟机，它提供了自动 GC（垃圾回收）的功能，来保证 Java 程序使用过且不再使用的 Java 对象及时的从内存中释放掉，从而保证内存空间可用。
+当程序编写不当或考虑欠缺的时候（比如读入大文件），内存就可能存储不下运行所需要的数据，...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Wed Apr 13 2016 00:00:00 GMT+0800">2016-04-13</span></span>
+        
+        
+    </div>
+
+    <a href="/2016/04/13/Redis/13.Redis%E7%9A%84%E8%B6%85%E6%97%B6%E5%91%BD%E4%BB%A4%E5%92%8C%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E7%AD%96%E7%95%A5/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2016/04/12/Redis/12.Redis_%E4%BA%8B%E5%8A%A1_%E7%A7%92%E6%9D%80%E6%A1%88%E4%BE%8B/">
+                        12.Redis_事务_秒杀案例
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        连接超时，通过连接池解决节省每次连接redis服务带来的消耗，把连接好的实例反复利用。
+通过参数管理连接的行为
+代码见项目中
+
+链接池参数
+MaxTotal：控制一个pool可分配多少个jedis实例，通过pool.getResource()来获取；...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Tue Apr 12 2016 00:00:00 GMT+0800">2016-04-12</span></span>
+        
+        
+    </div>
+
+    <a href="/2016/04/12/Redis/12.Redis_%E4%BA%8B%E5%8A%A1_%E7%A7%92%E6%9D%80%E6%A1%88%E4%BE%8B/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2016/04/11/Redis/11.Redis_%E4%BA%8B%E5%8A%A1_%E9%94%81%E6%9C%BA%E5%88%B6_%E7%A7%92%E6%9D%80/">
+                        11.Redis_事务_锁机制_秒杀
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        Redis的事务定义Redis事务是一个单独的隔离操作：事务中的所有命令都会序列化、按顺序地执行。事务在执行的过程中，不会被其他客户端发送来的命令请求所打断。
+Redis事务的主要作用就是串联多个命令防止别的命令插队。
+和其他大部分的 NoSQL 不...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Mon Apr 11 2016 00:00:00 GMT+0800">2016-04-11</span></span>
+        
+        
+    </div>
+
+    <a href="/2016/04/11/Redis/11.Redis_%E4%BA%8B%E5%8A%A1_%E9%94%81%E6%9C%BA%E5%88%B6_%E7%A7%92%E6%9D%80/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2016/04/10/Redis/10.%E5%8F%91%E5%B8%83%E8%AE%A2%E9%98%85/">
+                        10.发布订阅
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        什么是订阅发布?Redis 发布订阅 (pub/sub) 是一种消息通信模式：发送者 (pub) 发送消息，订阅者 (sub) 接收消息。
+Redis 客户端可以订阅任意数量的频道。
+5.2.Redis的发布和订阅
+客户端可以订阅频道如下图
+
+
+
+当...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Sun Apr 10 2016 00:00:00 GMT+0800">2016-04-10</span></span>
+        
+        
+    </div>
+
+    <a href="/2016/04/10/Redis/10.%E5%8F%91%E5%B8%83%E8%AE%A2%E9%98%85/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
                     <a href="/2016/04/09/Redis/9.Redis%E9%85%8D%E7%BD%AE/">
                         9.Redis配置
                     </a>
@@ -312,122 +439,6 @@ Redis hash是一个string类型的field和value的映射表，hash特别适合�
     </div>
 
     <a href="/2016/04/04/Redis/4.Hash%E7%B1%BB%E5%9E%8B%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
-</div>
-
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                <h3 class="home-article-title">
-                    <a href="/2016/04/03/Redis/3.Set%E7%B1%BB%E5%9E%8B%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/">
-                        3.Set类型常用操作
-                    </a>
-                </h3>
-
-                <div class="home-article-content markdown-body">
-                    
-                        简介Redis set对外提供的功能与list类似是一个列表的功能，特殊之处在于set是可以自动排重的，当你需要存储一个列表数据，又不希望出现重复数据时，set是一个很好的选择.
-并且set提供了判断某个成员是否在一个set集合内的重要接口，这个也是...
-                    
-                </div>
-
-                <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Sun Apr 03 2016 00:00:00 GMT+0800">2016-04-03</span></span>
-        
-        
-    </div>
-
-    <a href="/2016/04/03/Redis/3.Set%E7%B1%BB%E5%9E%8B%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
-</div>
-
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                <h3 class="home-article-title">
-                    <a href="/2016/04/02/Redis/2.List%E7%B1%BB%E5%9E%8B%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/">
-                        2.List类型常用操作
-                    </a>
-                </h3>
-
-                <div class="home-article-content markdown-body">
-                    
-                        简介单键多值Redis 列表是简单的字符串列表，按照插入顺序排序。你可以添加一个元素到列表的头部（左边）或者尾部（右边）。它的底层实际是个双向链表，对两端的操作性能很高，通过索引下标的操作中间的节点性能会较差。
-
-常用命令lpush/rpush   ...
-                    
-                </div>
-
-                <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Sat Apr 02 2016 00:00:00 GMT+0800">2016-04-02</span></span>
-        
-        
-    </div>
-
-    <a href="/2016/04/02/Redis/2.List%E7%B1%BB%E5%9E%8B%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
-</div>
-
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                <h3 class="home-article-title">
-                    <a href="/2016/04/01/Redis/1.String%E7%B1%BB%E5%9E%8B%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/">
-                        1.String类型常用操作
-                    </a>
-                </h3>
-
-                <div class="home-article-content markdown-body">
-                    
-                        Redis键(key)keys *查看当前库所有key    (匹配：keys *1)exists key判断某个key是否存在type key 查看你的key是什么类型del key       删除指定的key数据unlink key   根据v...
-                    
-                </div>
-
-                <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Fri Apr 01 2016 00:00:00 GMT+0800">2016-04-01</span></span>
-        
-        
-    </div>
-
-    <a href="/2016/04/01/Redis/1.String%E7%B1%BB%E5%9E%8B%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
-</div>
-
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                <h3 class="home-article-title">
-                    <a href="/2016/03/08/java_%E5%9F%BA%E7%A1%80/8.Scaner/">
-                        8.Scaner
-                    </a>
-                </h3>
-
-                <div class="home-article-content markdown-body">
-                    
-                        例子:
-12345678910111213import java.util.Scanner;public class ScannerDemo &#123;    public static void main(String[] args) &#123...
-                    
-                </div>
-
-                <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Tue Mar 08 2016 21:10:21 GMT+0800">2016-03-08</span></span>
-        
-        
-    </div>
-
-    <a href="/2016/03/08/java_%E5%9F%BA%E7%A1%80/8.Scaner/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
 </div>
 
             </li>

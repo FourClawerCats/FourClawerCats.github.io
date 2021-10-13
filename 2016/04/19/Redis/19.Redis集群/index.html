@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="TZ">
+    
+    <title>
+        
+            19.Redis集群 |
+        
+        TZ Blog
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/cat.svg">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"en"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":true,"init_open":true},"style":{"primary_color":"#0066CC","avatar":"/images/cat_logo.svg","favicon":"/images/cat.svg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":false,"scale":false},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"淡苦无妨，当归即好。"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":true}}},"local_search":{"enable":false,"preload":false},"code_copy":{"enable":true,"style":"mac"},"pjax":{"enable":true},"lazyload":{"enable":true},"version":"3.4.3"};
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+  </script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <span class="pjax-progress-icon">
+            <i class="fas fa-circle-notch fa-spin"></i>
+        </span>
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                TZ Blog
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                HOME
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                TAGS
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                ARCHIVES
+                            </a>
+                        </li>
+                    
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">HOME</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">TAGS</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">ARCHIVES</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">19.Redis集群</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/cat_logo.svg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">TZ</span>
+                        
+                            <span class="author-label">Lv5</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;2016-04-19 00:00:00
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/Redis/">Redis</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/Redis/">Redis</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i>&nbsp;<span>1.1k Words</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i>&nbsp;<span>4 Mins</span>
+        </span>
+    
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><ul>
+<li><p>容量不够，redis如何进行扩容？</p>
+</li>
+<li><p>并发写操作， redis如何分摊？</p>
+</li>
+<li><p>另外，主从模式，薪火相传模式，主机宕机，导致ip地址发生变化，应用程序中配置需要修改对应的主机地址、端口等信息。</p>
+</li>
+</ul>
+<p>之前通过代理主机来解决，但是redis3.0中提供了解决方案。就是无中心化集群配置。</p>
+<h2 id="什么是集群"><a href="#什么是集群" class="headerlink" title="什么是集群?"></a>什么是集群?</h2><p>Redis 集群实现了对Redis的水平扩容，即启动N个redis节点，将整个数据库分布存储在这N个节点中，每个节点存储总数据的1/N。</p>
+<p>Redis 集群通过分区（partition）来提供一定程度的可用性(availability）： </p>
+<p>即使集群中有一部分节点失效或者无法进行通讯， 集群也可以继续处理命令请求。</p>
+<h2 id="搭建集群"><a href="#搭建集群" class="headerlink" title="搭建集群"></a>搭建集群</h2><p>删除持久化数据</p>
+<p>制作6个实例，6379,6380,6381,6389,6390,6391</p>
+<h3 id="基本信息配置"><a href="#基本信息配置" class="headerlink" title="基本信息配置"></a>基本信息配置</h3><p>开启daemonize yes</p>
+<p>Pid文件名字</p>
+<p>指定端口</p>
+<p>Log文件名字</p>
+<p>Dump.rdb名字</p>
+<p>Appendonly 关掉或者换名字</p>
+<h3 id="redis-cluster配置修改"><a href="#redis-cluster配置修改" class="headerlink" title="redis cluster配置修改"></a>redis cluster配置修改</h3><p>cluster-enabled yes    打开集群模式</p>
+<p>cluster-config-file nodes-6379.conf  设定节点配置文件名</p>
+<p>cluster-node-timeout 15000   设定节点失联时间，超过该时间（毫秒），集群自动进行主从切换。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">include /home/bigdata/redis.conf</span><br><span class="line">port 6379</span><br><span class="line">pidfile <span class="string">&quot;/var/run/redis_6379.pid&quot;</span></span><br><span class="line">dbfilename <span class="string">&quot;dump6379.rdb&quot;</span></span><br><span class="line">dir <span class="string">&quot;/home/bigdata/redis_cluster&quot;</span></span><br><span class="line">logfile <span class="string">&quot;/home/bigdata/redis_cluster/redis_err_6379.log&quot;</span></span><br><span class="line">cluster-enabled yes</span><br><span class="line">cluster-config-file nodes-6379.conf</span><br><span class="line">cluster-node-timeout 15000</span><br></pre></td></tr></table></figure>
+
+<p>修改好redis6379.conf文件，拷贝多个redis.conf文件</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://i.loli.net/2021/07/23/hegXtIpBYWOaC5v.png"
+                      alt="image.png"
+                ></p>
+<p>启动六个服务</p>
+<h3 id="合体"><a href="#合体" class="headerlink" title="合体"></a>合体</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-cli --cluster create --cluster-replicas 1 192.168.11.101:6379 192.168.11.101:6380 192.168.11.101:6381 192.168.11.101:6389 192.168.11.101:6390 192.168.11.101:6391</span><br></pre></td></tr></table></figure>
+
+<p>此处不要用127.0.0.1， 请用真实IP地址</p>
+<p>replicas 1 采用最简单的方式配置集群，一台主机，一台从机，正好三组。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://i.loli.net/2021/07/23/idDn2ty5N9wbZpc.png"
+                      alt="image.png"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://i.loli.net/2021/07/23/2dHsSKuUPX1573c.png"
+                      alt="image.png"
+                ></p>
+<p>可能直接进入读主机，存储数据时，会出现MOVED重定向操作。所以，应该以集群方式登录。</p>
+<p>-c 采用集群策略连接，设置数据会自动切换到相应的写主机</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://i.loli.net/2021/07/23/LWZEjIy1AH293Cv.png"
+                      alt="image.png"
+                ></p>
+<p>通过 cluster nodes 命令查看集群信息</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://i.loli.net/2021/07/23/vGclgFusRmnArJw.png"
+                      alt="image.png"
+                ></p>
+<h3 id="redis-cluster-如何分配这六个节点"><a href="#redis-cluster-如何分配这六个节点" class="headerlink" title="redis cluster 如何分配这六个节点?"></a>redis cluster 如何分配这六个节点?</h3><p>一个集群至少要有三个主节点。</p>
+<p>选项 –cluster-replicas 1 表示我们希望为集群中的每个主节点创建一个从节点。</p>
+<p>分配原则尽量保证每个主数据库运行在不同的IP地址，每个从库和主库不在一个IP地址上。</p>
+<h2 id="什么是slots"><a href="#什么是slots" class="headerlink" title="什么是slots"></a>什么是slots</h2><p>一个 Redis 集群包含 16384 个插槽（hash slot）， 数据库中的每个键都属于这 16384 个插槽的其中一个</p>
+<p>集群使用公式 CRC16(key) % 16384 来计算键 key 属于哪个槽， 其中 CRC16(key) 语句用于计算键 key 的 CRC16 校验和</p>
+<p>集群中的每个节点负责处理一部分插槽。 举个例子， 如果一个集群可以有主节点， 其中：</p>
+<p>节点 A 负责处理 0 号至 5460 号插槽。</p>
+<p>节点 B 负责处理 5461 号至 10922 号插槽。</p>
+<p>节点 C 负责处理 10923 号至 16383 号插槽。</p>
+<h2 id="在集群中录入值"><a href="#在集群中录入值" class="headerlink" title="在集群中录入值"></a>在集群中录入值</h2><p>在redis-cli每次录入、查询键值，redis都会计算出该key应该送往的插槽，如果不是该客户端对应服务器的插槽，redis会报错，并告知应前往的redis实例地址和端口。</p>
+<p>redis-cli客户端提供了 –c 参数实现自动重定向。</p>
+<p>如 redis-cli  -c –p 6379 登入后，再录入、查询键值对可以自动重定向。</p>
+<p>不在一个slot下的键值，是不能使用mget,mset等多键操作。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://i.loli.net/2021/07/23/sjVK28ymeYvcTSp.png"
+                      alt="image.png"
+                ></p>
+<p>可以通过{}来定义组的概念，从而使key中{}内相同内容的键值对放到一个slot中去。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://i.loli.net/2021/07/23/imrXCsfVeEAthqP.png"
+                      alt="image.png"
+                ></p>
+<h2 id="查询集群中的值"><a href="#查询集群中的值" class="headerlink" title="查询集群中的值"></a>查询集群中的值</h2><p>CLUSTER GETKEYSINSLOT <slot> <count> 返回 count 个 slot 槽中的键。<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://i.loli.net/2021/07/23/2nlkTGRC16BHNPI.png"
+                      alt="image.png"
+                ></p>
+<h2 id="故障恢复"><a href="#故障恢复" class="headerlink" title="故障恢复"></a>故障恢复</h2><p>如果主节点下线？从节点能否自动升为主节点？注意：15秒超时<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://i.loli.net/2021/07/23/m6rUjXoP3IdSqcl.png"
+                      alt="image.png"
+                ></p>
+<p>主节点恢复后，主从关系会如何？主节点回来变成从机。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://i.loli.net/2021/07/23/gvU6h2kbyEFrWtp.png"
+                      alt="image.png"
+                ></p>
+<p>如果所有某一段插槽的主从节点都宕掉，redis服务是否还能继续?</p>
+<p>如果某一段插槽的主从都挂掉，而cluster-require-full-coverage 为yes ，那么 ，整个集群都挂掉</p>
+<p>如果某一段插槽的主从都挂掉，而cluster-require-full-coverage 为no ，那么，该插槽数据全都不能使用，也无法存储。</p>
+<p>redis.conf中的参数  cluster-require-full-coverage</p>
+
+        </div>
+
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2020/01/07/English/word/King%20of%20the%20hill/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">King of the hill season One word</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2016/04/18/Redis/18.%E5%93%A8%E5%85%B5%E6%A8%A1%E5%BC%8F/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">18.哨兵模式</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2020</span>&nbsp;-&nbsp;
+            
+            2021&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">TZ</a>
+        </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98"><span class="nav-number">1.</span> <span class="nav-text">问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E9%9B%86%E7%BE%A4"><span class="nav-number">2.</span> <span class="nav-text">什么是集群?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%90%AD%E5%BB%BA%E9%9B%86%E7%BE%A4"><span class="nav-number">3.</span> <span class="nav-text">搭建集群</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF%E9%85%8D%E7%BD%AE"><span class="nav-number">3.1.</span> <span class="nav-text">基本信息配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#redis-cluster%E9%85%8D%E7%BD%AE%E4%BF%AE%E6%94%B9"><span class="nav-number">3.2.</span> <span class="nav-text">redis cluster配置修改</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%88%E4%BD%93"><span class="nav-number">3.3.</span> <span class="nav-text">合体</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#redis-cluster-%E5%A6%82%E4%BD%95%E5%88%86%E9%85%8D%E8%BF%99%E5%85%AD%E4%B8%AA%E8%8A%82%E7%82%B9"><span class="nav-number">3.4.</span> <span class="nav-text">redis cluster 如何分配这六个节点?</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFslots"><span class="nav-number">4.</span> <span class="nav-text">什么是slots</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%A8%E9%9B%86%E7%BE%A4%E4%B8%AD%E5%BD%95%E5%85%A5%E5%80%BC"><span class="nav-number">5.</span> <span class="nav-text">在集群中录入值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9F%A5%E8%AF%A2%E9%9B%86%E7%BE%A4%E4%B8%AD%E7%9A%84%E5%80%BC"><span class="nav-number">6.</span> <span class="nav-text">查询集群中的值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%85%E9%9A%9C%E6%81%A2%E5%A4%8D"><span class="nav-number">7.</span> <span class="nav-text">故障恢复</span></a></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/dark-light-toggle.js"></script>
+
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/code-copy.js"></script>
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/lazyload.js"></script>
+
+
+<div class="post-scripts pjax">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/toc.js"></script>
+    
+</div>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/libs/pjax.min.js"></script>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+            // scrollTo: true,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.pjaxProgressBarStart();
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.pjaxProgressBarEnd();
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+            KEEP.refresh();
+        });
+    });
+</script>
+
+
+
+</body>
+</html>
