@@ -9,7 +9,7 @@
     
     <title>
         
-            King of the hill season One word |
+            centos7防火墙设置 |
         
         TZ Blog
     </title>
@@ -136,7 +136,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">King of the hill season One word</span>
+            <span class="title-hover-animation">centos7防火墙设置</span>
         </div>
 
         
@@ -154,7 +154,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2020-01-07 00:00:00
+        <i class="fas fa-edit"></i>&nbsp;2021-01-21 21:51:20
     </span>
     
         <span class="article-categories article-meta-item">
@@ -162,7 +162,7 @@
             <ul>
                 
                     <li>
-                        <a href="/categories/Englishi/">Englishi</a>&nbsp;
+                        <a href="/categories/%E5%B7%A5%E5%85%B7%E7%9F%A5%E8%AF%86/">工具知识</a>&nbsp;
                     </li>
                 
             </ul>
@@ -174,7 +174,7 @@
             <ul>
                 
                     <li>
-                        <a href="/tags/king-of-the-hill-Season-One/">king of the hill Season One</a>&nbsp;
+                        <a href="/tags/%E5%B7%A5%E5%85%B7%E7%9F%A5%E8%AF%86/">工具知识</a>&nbsp;
                     </li>
                 
             </ul>
@@ -184,7 +184,7 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>319 Words</span>
+            <i class="fas fa-file-word"></i>&nbsp;<span>348 Words</span>
         </span>
     
     
@@ -201,8 +201,20 @@
         
 
         <div class="article-content markdown-body">
-            <h2 id="Class-One"><a href="#Class-One" class="headerlink" title="Class One"></a>Class One</h2><p>pilot 飞行员 驾驶员<br>damn  该死<br>starter 启动 开始<br>motor 马达<br>starter motor 发动马达 发动机<br>compression 压缩 压紧 压缩机<br>you getting good compression? 你确定压缩你是好的?<br>you getting 你确定 你得到<br>wrong 错误 坏事<br>I know what’s wrong with it. 我知道有什么错误 我知道有什么问题<br>Ford 福特<br>what they say 他们怎么说<br>Ford stands for 福特的来历<br>stands for 来历<br>Fix It Again Tony 再修他一次托尼<br>Fiat 菲亚特<br>You’re thinking of a Fiat, Dale.<br>spark 火花 火星<br>plug 塞子 插座<br>hole 孔洞<br>oil 油<br>said say的过去式和过去分词<br>shock would shock’d 震惊 震动<br>wish 希望<br>were are的过去式<br>simple 简单<br>truck 卡车<br>Leadership 领导力<br>hasn’t has not缩写 没有<br>felt<br>any 任何<br>real 真正的<br>pride 骄傲 自豪<br>since 自从 因为<br>went go的过去时<br>vomit 呕吐<br>vomited 呕吐过去时<br>auto 汽车<br>executive 主管<br>auto executives 几大汽车制造商高管<br>catch 捕捉 看<br>last night 昨晚<br>miss 失误 错过<br>part 部分；角色；零件；一些；片段<br>talk 谈话 交谈<br>talks 第三人称单数 动词加s<br>about 关于<br>tasting 品尝 尝味<br>his 他的<br>own 自己的<br>burp 饱嗝儿 打嗝<br>sliding 滑行的 变化的<br>always 总是<br>does 做 do的第三人称单数形式</p>
+            <h2 id="firewalld的基本使用"><a href="#firewalld的基本使用" class="headerlink" title="firewalld的基本使用"></a>firewalld的基本使用</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">启动： systemctl start firewalld</span><br><span class="line">关闭： systemctl stop firewalld</span><br><span class="line">查看状态： systemctl status firewalld </span><br><span class="line">开机禁用  ： systemctl <span class="built_in">disable</span> firewalld</span><br><span class="line">开机启用  ： systemctl <span class="built_in">enable</span> firewalld</span><br></pre></td></tr></table></figure>
 
+<h2 id="systemctl"><a href="#systemctl" class="headerlink" title="systemctl"></a>systemctl</h2><p>systemctl是CentOS7的服务管理工具中主要的工具，它融合之前service和chkconfig的功能于一体。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">启动一个服务：systemctl start firewalld.service</span><br><span class="line"></span><br><span class="line">关闭一个服务：systemctl stop firewalld.service</span><br><span class="line"></span><br><span class="line">重启一个服务：systemctl restart firewalld.service</span><br><span class="line"></span><br><span class="line">显示一个服务的状态：systemctl status firewalld.service</span><br><span class="line"></span><br><span class="line">在开机时启用一个服务：systemctl <span class="built_in">enable</span> firewalld.service</span><br><span class="line"></span><br><span class="line">在开机时禁用一个服务：systemctl <span class="built_in">disable</span> firewalld.service</span><br><span class="line"></span><br><span class="line">查看服务是否开机启动：systemctl is-enabled firewalld.service</span><br><span class="line"></span><br><span class="line">查看已启动的服务列表：systemctl list-unit-files|grep enabled</span><br><span class="line"></span><br><span class="line">查看启动失败的服务列表：systemctl --failed</span><br></pre></td></tr></table></figure>
+
+<h2 id="配置firewalld-cmd"><a href="#配置firewalld-cmd" class="headerlink" title="配置firewalld-cmd"></a>配置firewalld-cmd</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">查看版本： firewall-cmd --version</span><br><span class="line"></span><br><span class="line">查看帮助： firewall-cmd --<span class="built_in">help</span></span><br><span class="line"></span><br><span class="line">显示状态： firewall-cmd --state</span><br><span class="line"></span><br><span class="line">查看所有打开的端口： firewall-cmd --zone=public --list-ports</span><br><span class="line"></span><br><span class="line">更新防火墙规则： firewall-cmd --reload</span><br><span class="line"></span><br><span class="line">查看区域信息:  firewall-cmd --get-active-zones</span><br><span class="line"></span><br><span class="line">查看指定接口所属区域： firewall-cmd --get-zone-of-interface=eth0</span><br><span class="line"></span><br><span class="line">拒绝所有包：firewall-cmd --panic-on</span><br><span class="line"></span><br><span class="line">取消拒绝状态： firewall-cmd --panic-off</span><br><span class="line"></span><br><span class="line">查看是否拒绝： firewall-cmd --query-panic</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="开启端口"><a href="#开启端口" class="headerlink" title="开启端口"></a>开启端口</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --zone=public --add-port=80/tcp --permanent    </span><br><span class="line"><span class="comment">#（--permanent永久生效，没有此参数重启后失效）</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="重新载入-重启"><a href="#重新载入-重启" class="headerlink" title="重新载入(重启)"></a>重新载入(重启)</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --reload</span><br></pre></td></tr></table></figure>
+
+<h2 id="查看端口"><a href="#查看端口" class="headerlink" title="查看端口"></a>查看端口</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --zone=public --query-port=80/tcp</span><br></pre></td></tr></table></figure>
+
+<h2 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --zone=public --remove-port=80/tcp --permanent</span><br></pre></td></tr></table></figure>
         </div>
 
         
@@ -213,13 +225,13 @@
                     <div class="article-prev">
                         <a class="prev"
                            rel="prev"
-                           href="/2021/01/01/%E5%B7%A5%E5%85%B7%E7%9F%A5%E8%AF%86/%E6%95%B0%E5%AD%97%E8%B4%A7%E5%B8%81%E9%92%B1%E5%8C%85%E7%9F%A5%E8%AF%86/"
+                           href="/2021/01/22/java_%E5%A4%9A%E7%BA%BF%E7%A8%8B/2.%E7%BA%BF%E7%A8%8B%E5%88%9B%E5%BB%BA/"
                         >
                             <span class="left arrow-icon flex-center">
                               <i class="fas fa-chevron-left"></i>
                             </span>
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">比特币钱包生成原理</span>
+                                <span class="post-nav-title-item">2.线程创建</span>
                                 <span class="post-nav-item">Prev posts</span>
                             </span>
                         </a>
@@ -229,10 +241,10 @@
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2016/05/02/%E7%AE%97%E6%B3%95-%E9%98%9F%E5%88%97&amp;%E6%A0%88/2.%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E4%BD%B3%E6%97%B6%E6%9C%BA%20/"
+                           href="/2021/01/21/java_%E5%A4%9A%E7%BA%BF%E7%A8%8B/1.%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%A6%82%E8%BF%B0/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">2.买卖股票的最佳时机</span>
+                                <span class="post-nav-title-item">1.多线程概述</span>
                                 <span class="post-nav-item">Next posts</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -342,7 +354,7 @@
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Class-One"><span class="nav-number">1.</span> <span class="nav-text">Class One</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#firewalld%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8"><span class="nav-number">1.</span> <span class="nav-text">firewalld的基本使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#systemctl"><span class="nav-number">2.</span> <span class="nav-text">systemctl</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AEfirewalld-cmd"><span class="nav-number">3.</span> <span class="nav-text">配置firewalld-cmd</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%80%E5%90%AF%E7%AB%AF%E5%8F%A3"><span class="nav-number">4.</span> <span class="nav-text">开启端口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%87%8D%E6%96%B0%E8%BD%BD%E5%85%A5-%E9%87%8D%E5%90%AF"><span class="nav-number">5.</span> <span class="nav-text">重新载入(重启)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E7%AB%AF%E5%8F%A3"><span class="nav-number">6.</span> <span class="nav-text">查看端口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%A0%E9%99%A4"><span class="nav-number">7.</span> <span class="nav-text">删除</span></a></li></ol>
     </div>
 </div>
         </aside>
